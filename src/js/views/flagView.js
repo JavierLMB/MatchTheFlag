@@ -1,10 +1,11 @@
 import View from "./View.js";
-import gameView from "./gameView.js";
+import { GameView } from "./gameView.js";
 
-class FlagView extends View {
+class FlagView extends GameView {
   _parentElement = document.querySelector(".flag__container");
+  _target = `.flag__image img`;
 
-  _generateMarkupFlags() {
+  _generateMarkup() {
     return this._data
       .map(
         (data) => `

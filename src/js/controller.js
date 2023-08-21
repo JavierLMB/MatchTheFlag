@@ -3,13 +3,16 @@ import "regenerator-runtime/runtime";
 
 import * as model from "./model.js";
 import gameView from "./views/gameView.js";
+import flagView from "./views/flagView.js";
+import nameView from "./views/nameView.js";
 
 //////////////////////////////////////
 
-const controlFlags = async function () {
+const controlGame = async function () {
   try {
     await model.loadFlag();
-    gameView.render(model.state.countries);
+    flagView.render(model.state.countries);
+    nameView.render(model.state.countries);
   } catch (err) {
     console.log(err);
   }
@@ -20,16 +23,9 @@ const controlMatch = function (countryName) {
 };
 
 const init = function () {
-  gameView.addHandlerRender(controlFlags);
-  gameView.addHandlerClick(
-    controlMatch,
-    gameView._parentFlag,
-    `.flag__image img`
-  );
-  gameView.addHandlerClick(
-    controlMatch,
-    gameView._parentName,
-    `.name__country`
-  );
+  flagView.addHandlerRender(controlGame);
+  nameView.addHandlerRender(controlGame);
+  flagView.addHandlerClick(controlMatch);
+  nameView.addHandlerClick(controlMatch);
 };
 init();
