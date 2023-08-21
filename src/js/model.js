@@ -29,5 +29,3 @@ export const loadFlag = async function () {
     console.log(err);
   }
 };
-
-loadFlag();
