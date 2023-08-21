@@ -8,24 +8,40 @@ class GameView extends View {
     window.addEventListener("load", handler);
   }
 
-  _generateMarkupFlags() {
-    return this._data
-      .map(
-        (data) => `
-          <figure class="flag__image">
-            <img src="${data.image}" />
-          </figure>
-        `
-      )
-      .join("");
+  addHandlerClick(handler, parent, target) {
+    parent.addEventListener(
+      "click",
+      function (e) {
+        const click = e.target.closest(target);
+        if (!click) return;
+        const countryName = click.getAttribute("data-country");
+        console.log(click);
+        console.log(countryName);
+        // this._toggleActiveFlag(click);
+
+        handler(countryName);
+      }.bind(this)
+    );
+  }
+
+  _toggleActiveFlag(flag) {
+    const allFlags = Array.from(document.querySelectorAll(".flag__image img"));
+
+    const hasActiveFlag = allFlags.some((flag) =>
+      flag.classList.contains("flag__image--active")
+    );
+
+    if (!hasActiveFlag) flag.classList.toggle("flag__image--active");
+    if (hasActiveFlag) flag.classList.remove("flag__image--active");
   }
 
   _generateMarkupNames() {
     this._namePositionShuffle(this._data);
     return this._data
       .map(
-        (data) => `
-        <div class="name__country">${data.name}</div> 
+        (data) => `<div class="name__country--container">
+        <div class="name__country" data-country="${data.name}">${data.name}</div> 
+        </div>
         `
       )
       .join("");

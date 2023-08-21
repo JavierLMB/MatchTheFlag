@@ -9,8 +9,8 @@ export default class View {
     const markupNames = this._generateMarkupNames();
 
     this._clear();
-    this._parentName.insertAdjacentHTML("afterbegin", markupNames);
     this._parentFlag.insertAdjacentHTML("afterbegin", markupFlags);
+    this._parentName.insertAdjacentHTML("afterbegin", markupNames);
   }
 
   _clear() {

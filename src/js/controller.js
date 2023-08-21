@@ -15,7 +15,21 @@ const controlFlags = async function () {
   }
 };
 
+const controlMatch = function (countryName) {
+  console.log(countryName);
+};
+
 const init = function () {
   gameView.addHandlerRender(controlFlags);
+  gameView.addHandlerClick(
+    controlMatch,
+    gameView._parentFlag,
+    `.flag__image img`
+  );
+  gameView.addHandlerClick(
+    controlMatch,
+    gameView._parentName,
+    `.name__country`
+  );
 };
 init();
