@@ -21,7 +21,7 @@ const controlGame = async function () {
 const controlMatch = function (countryName) {
   console.log(countryName);
   model.matchGame(countryName);
-  gameView.matchCondition(model.state.result);
+  gameView.matchCondition(model.state);
 };
 
 const init = function () {

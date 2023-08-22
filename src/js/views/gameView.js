@@ -1,4 +1,5 @@
 import View from "./View.js";
+import { MATCHING_LIMITS } from "./../config.js";
 
 export class GameView extends View {
   _parentElement = document.querySelector(".container");
@@ -41,8 +42,9 @@ export class GameView extends View {
     return activeElementCountry;
   }
 
-  matchCondition(result) {
-    console.log(result);
+  matchCondition(state) {
+    if (state.matching.length !== MATCHING_LIMITS) return;
+    console.log(state.result);
   }
 }
 
