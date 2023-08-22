@@ -3,6 +3,7 @@ import { API_URL } from "./config.js";
 
 export const state = {
   countries: [],
+  matching: [],
 };
 
 const createCountryObject = function (arrData) {
@@ -29,3 +30,5 @@ export const loadFlag = async function () {
     console.log(err);
   }
 };
+
+export const matchGame = function (countryName) {};
