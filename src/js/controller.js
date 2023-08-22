@@ -10,7 +10,7 @@ import nameView from "./views/nameView.js";
 
 const controlGame = async function () {
   try {
-    await model.loadFlag();
+    await model.loadCountryData();
     flagView.render(model.state.countries);
     nameView.render(model.state.countries);
   } catch (err) {
@@ -21,6 +21,7 @@ const controlGame = async function () {
 const controlMatch = function (countryName) {
   console.log(countryName);
   model.matchGame(countryName);
+  gameView.matchCondition(model.state.result);
 };
 
 const init = function () {

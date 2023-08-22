@@ -13,7 +13,7 @@ const createCountryObject = function (arrData) {
   };
 };
 
-export const loadFlag = async function () {
+export const loadCountryData = async function () {
   try {
     const data = await AJAX(`${API_URL}`);
     const uniqueIndices = getRandomUniqueInt(data.length);
@@ -24,8 +24,8 @@ export const loadFlag = async function () {
       state.countries.push(countryObject);
     });
 
-    console.log(data[5]);
-    console.log(state.countries);
+    // console.log(data[5]);
+    // console.log(state.countries);
   } catch (err) {
     console.log(err);
   }
@@ -37,25 +37,30 @@ export const matchGame = function (countryName) {
     console.log(state.matching);
     return;
   }
-
   state.matching.push(countryName);
-
-  if (
-    state.matching.length === MATCHING_LIMITS &&
-    fullName(state.matching[0]) === fullName(state.matching[1])
-  )
-    console.log("win");
-
-  if (
-    state.matching.length === MATCHING_LIMITS &&
-    fullName(state.matching[0]) !== fullName(state.matching[1])
-  )
-    console.log("Lost");
-
+  matchDecision();
+  // console.log(state.result);
   console.log(state.matching);
 };
 
 const removeDuplicates = function (countryName) {
   const indexToRemove = state.matching.indexOf(countryName);
   state.matching.splice(indexToRemove, 1);
+};
+
+const matchDecision = function () {
+  let result = "";
+  if (
+    state.matching.length === MATCHING_LIMITS &&
+    fullName(state.matching[0]) !== fullName(state.matching[1])
+  ) {
+    state.result = "loss";
+  } else if (
+    state.matching.length === MATCHING_LIMITS &&
+    fullName(state.matching[0]) === fullName(state.matching[1])
+  ) {
+    state.result = "win";
+  }
+
+  return state.result;
 };

@@ -40,6 +40,10 @@ export class GameView extends View {
     if (activeElement) click.classList.remove("flag__image--active");
     return activeElementCountry;
   }
+
+  matchCondition(result) {
+    console.log(result);
+  }
 }
 
 export default new GameView();
