@@ -1,5 +1,5 @@
-import { AJAX, getRandomUniqueInt } from "./helpers.js";
-import { API_URL } from "./config.js";
+import { AJAX, getRandomUniqueInt, fullName } from "./helpers.js";
+import { API_URL, MATCHING_LIMITS } from "./config.js";
 
 export const state = {
   countries: [],
@@ -31,4 +31,31 @@ export const loadFlag = async function () {
   }
 };
 
-export const matchGame = function (countryName) {};
+export const matchGame = function (countryName) {
+  if (state.matching.includes(countryName)) {
+    removeDuplicates(countryName);
+    console.log(state.matching);
+    return;
+  }
+
+  state.matching.push(countryName);
+
+  if (
+    state.matching.length === MATCHING_LIMITS &&
+    fullName(state.matching[0]) === fullName(state.matching[1])
+  )
+    console.log("win");
+
+  if (
+    state.matching.length === MATCHING_LIMITS &&
+    fullName(state.matching[0]) !== fullName(state.matching[1])
+  )
+    console.log("Lost");
+
+  console.log(state.matching);
+};
+
+const removeDuplicates = function (countryName) {
+  const indexToRemove = state.matching.indexOf(countryName);
+  state.matching.splice(indexToRemove, 1);
+};

@@ -13,10 +13,13 @@ export class GameView extends View {
       function (e) {
         const click = e.target.closest(this._target);
         if (!click) return;
-        const countryName = click.getAttribute("data-country");
+        const countryName = click.getAttribute("data-country") + this._suffix;
         const activeElementCountry = this._toggleActiveFlag(click);
 
-        if (activeElementCountry && countryName !== activeElementCountry)
+        if (
+          activeElementCountry &&
+          countryName !== activeElementCountry + this._suffix
+        )
           return;
 
         handler(countryName);

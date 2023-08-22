@@ -20,6 +20,7 @@ const controlGame = async function () {
 
 const controlMatch = function (countryName) {
   console.log(countryName);
+  model.matchGame(countryName);
 };
 
 const init = function () {

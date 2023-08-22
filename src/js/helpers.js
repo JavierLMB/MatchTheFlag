@@ -30,3 +30,7 @@ export const AJAX = async function (url) {
     console.log(err);
   }
 };
+
+export const fullName = function (countryName) {
+  return countryName.split("-")[0];
+};

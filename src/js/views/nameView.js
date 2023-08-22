@@ -4,6 +4,7 @@ import { GameView } from "./gameView.js";
 class NameView extends GameView {
   _parentElement = document.querySelector(".name__container");
   _target = `.name__country`;
+  _suffix = `-Name`;
 
   _generateMarkup() {
     this._namePositionShuffle(this._data);
