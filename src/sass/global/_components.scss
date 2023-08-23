@@ -1,10 +1,67 @@
 @use "_base" as *;
 
-.hidden__winner {
-  transition: box-shadow 0.1s, opacity 1s ease-out,
-    transform 3s cubic-bezier(0.25, 2, 0.5, 2.5) !important;
+.winner__effect {
+  transition: opacity 1s ease-out, transform 3s cubic-bezier(0.25, 2, 0.5, 2.5) !important;
   opacity: 0 !important;
   transform: translateY(-3rem) !important;
   pointer-events: none;
-  box-shadow: 0px 0px 50px 5px rgba(128, 255, 0, 1) !important;
+  border: 3px solid rgba(128, 255, 0, 0.5) !important;
 }
+
+.losser__effect {
+  transition: border 1s, translate3d(0, 0, 0) !important;
+  border: 3px solid rgba(255, 0, 0, 0.5) !important;
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0) rotate(-1deg);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(1px, 0, 0) rotate(2deg);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-2px, 0, 0) rotate(-2deg);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(2px, 0, 0) rotate(1deg);
+  }
+}
+
+// .losser__effect {
+//   transition: box-shadow 0.1s, translate3d(0, 0, 0) !important;
+//   box-shadow: 0px 0px 50px 5px rgb(255, 0, 0) !important;
+//   animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+// }
+
+// @keyframes shake {
+//   10%,
+//   90% {
+//     transform: translate3d(-1px, 0, 0) rotate(-1deg);
+//   }
+
+//   20%,
+//   80% {
+//     transform: translate3d(1px, 0, 0) rotate(2deg);
+//   }
+
+//   30%,
+//   50%,
+//   70% {
+//     transform: translate3d(-2px, 0, 0) rotate(-2deg);
+//   }
+
+//   40%,
+//   60% {
+//     transform: translate3d(2px, 0, 0) rotate(1deg);
+//   }
+// }

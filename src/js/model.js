@@ -36,7 +36,6 @@ export const matchGame = function (countryName) {
   if (state.matching.includes(countryName)) {
     if (state.matching.length === 1) {
       removeDuplicates(countryName);
-      console.log(state.matching);
       return;
     }
     if (state.matching.length === MATCHING_LIMITS) {
@@ -47,15 +46,9 @@ export const matchGame = function (countryName) {
 
   state.matching.push(countryName);
   matchDecision();
-
-  // console.log(state.result);
-  // console.log(state.matching);
 };
 
 const removeDuplicates = function (countryName) {
-  // if (!state.matching.includes(countryName)) return;
-  // if (state.matching.length === MATCHING_LIMITS) return;
-
   const indexToRemove = state.matching.indexOf(countryName);
   state.matching.splice(indexToRemove, 1);
 };

@@ -56,12 +56,14 @@ export class GameView extends View {
 
     const matchedCountry = this._findHTMLCountry(state);
     matchedCountry.classList.remove("flag__image--active");
+    matchedCountry.classList.add("losser__effect");
+    setTimeout(() => matchedCountry.classList.remove("losser__effect"), 820);
   }
 
   _winCondition(state) {
     if (state.result !== "win") return;
     const matchedCountry = this._findHTMLCountry(state);
-    matchedCountry.classList.add("hidden__winner");
+    matchedCountry.classList.add("winner__effect");
     matchedCountry.classList.remove("flag__image--active");
     this._scoreCounter(state);
     console.log(matchedCountry);
