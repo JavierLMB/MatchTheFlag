@@ -43,12 +43,7 @@ export class GameView extends View {
   }
 
   matchCondition(state) {
-    if (state.matching.length > MATCHING_LIMITS && state.result === "win") {
-      state.matching.splice(0, 2);
-      state.result = "";
-    }
-    // Use above code/copy to fix the loss
-
+    this._clearMatchArray(state);
     console.log(state.matching);
     this._winCondition(state);
     this._lossCondition(state);
@@ -70,6 +65,16 @@ export class GameView extends View {
     matchedCountry.classList.remove("flag__image--active");
     this._scoreCounter(state);
     console.log(matchedCountry);
+  }
+
+  _clearMatchArray(state) {
+    if (
+      state.matching.length > MATCHING_LIMITS &&
+      (state.result === "win" || state.result === "loss")
+    ) {
+      state.matching.splice(0, 2);
+      state.result = "";
+    }
   }
 
   _findHTMLCountry(state) {
