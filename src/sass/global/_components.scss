@@ -1,1 +1,8 @@
 @use "_base" as *;
+
+.hidden__winner {
+  transition: opacity 1s, transform 3s cubic-bezier(0.25, 2, 0.5, 2.5) !important;
+  opacity: 0 !important;
+  transform: translateY(-3rem) !important;
+  pointer-events: none;
+}

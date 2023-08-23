@@ -4,6 +4,7 @@ import { API_URL, MATCHING_LIMITS } from "./config.js";
 export const state = {
   countries: [],
   matching: [],
+  score: [],
 };
 
 const createCountryObject = function (arrData) {
@@ -40,7 +41,7 @@ export const matchGame = function (countryName) {
   state.matching.push(countryName);
   matchDecision();
   // console.log(state.result);
-  console.log(state.matching);
+  // console.log(state.matching);
 };
 
 const removeDuplicates = function (countryName) {

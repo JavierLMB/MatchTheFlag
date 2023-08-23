@@ -43,8 +43,36 @@ export class GameView extends View {
   }
 
   matchCondition(state) {
-    if (state.matching.length !== MATCHING_LIMITS) return;
-    console.log(state.result);
+    if (state.matching.length > MATCHING_LIMITS) {
+      state.matching.splice(0, 2);
+      state.result = "";
+    }
+    console.log(state.matching);
+    this._winCondition(state);
+    if (state.score.length === 8) console.log("yessir");
+  }
+
+  _winCondition(state) {
+    if (state.result !== "win") return;
+    const matchedCountry = this._findHTMLCountry(state);
+    matchedCountry.classList.add("hidden__winner");
+    matchedCountry.classList.remove("flag__image--active");
+    this._scoreCounter(state);
+    console.log(matchedCountry);
+  }
+
+  _findHTMLCountry(state) {
+    let matchedCountry = state.matching.map((name) => name.split("-")[0])[0];
+    matchedCountry = this._parentElement.querySelector(
+      `[data-country="${matchedCountry}"]`
+    );
+    return matchedCountry;
+  }
+
+  _scoreCounter(state) {
+    const countryPoint = state.matching.map((name) => name.split("-")[0])[0];
+
+    state.score.push(countryPoint);
   }
 }
 
