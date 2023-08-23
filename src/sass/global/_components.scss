@@ -1,8 +1,10 @@
 @use "_base" as *;
 
 .hidden__winner {
-  transition: opacity 1s, transform 3s cubic-bezier(0.25, 2, 0.5, 2.5) !important;
+  transition: box-shadow 0.1s, opacity 1s ease-out,
+    transform 3s cubic-bezier(0.25, 2, 0.5, 2.5) !important;
   opacity: 0 !important;
   transform: translateY(-3rem) !important;
   pointer-events: none;
+  box-shadow: 0px 0px 50px 5px rgba(128, 255, 0, 1) !important;
 }

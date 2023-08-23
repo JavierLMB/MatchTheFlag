@@ -45,7 +45,13 @@ body {
   height: 100vh;
   line-height: 1.6;
   color: $color-grey-dark-1;
-  background-image: $gradient;
+  // background-image: $gradient;
+  // background-color: rgb(223, 199, 177);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 233, 211, 1) 0%,
+    rgb(237, 210, 183) 100%
+  );
   background-size: cover;
   background-repeat: no-repeat;
   min-height: calc(100vh - 2 * 4vw);

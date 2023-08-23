@@ -43,13 +43,24 @@ export class GameView extends View {
   }
 
   matchCondition(state) {
-    if (state.matching.length > MATCHING_LIMITS) {
+    if (state.matching.length > MATCHING_LIMITS && state.result === "win") {
       state.matching.splice(0, 2);
       state.result = "";
     }
+    // Use above code/copy to fix the loss
+
     console.log(state.matching);
     this._winCondition(state);
+    this._lossCondition(state);
     if (state.score.length === 8) console.log("yessir");
+  }
+
+  _lossCondition(state) {
+    if (state.result !== "loss") return;
+    if (state.matching.length < MATCHING_LIMITS) return;
+
+    const matchedCountry = this._findHTMLCountry(state);
+    matchedCountry.classList.remove("flag__image--active");
   }
 
   _winCondition(state) {
@@ -62,10 +73,19 @@ export class GameView extends View {
   }
 
   _findHTMLCountry(state) {
-    let matchedCountry = state.matching.map((name) => name.split("-")[0])[0];
+    let matchedCountry = state.matching;
+
+    matchedCountry = matchedCountry
+      .filter((item) => {
+        if (item.endsWith(this._suffix)) return true;
+        return false;
+      })
+      .map((item) => item.slice(0, -this._suffix.length));
+
     matchedCountry = this._parentElement.querySelector(
       `[data-country="${matchedCountry}"]`
     );
+
     return matchedCountry;
   }
 

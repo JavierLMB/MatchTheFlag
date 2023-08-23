@@ -9,14 +9,16 @@
   padding: 10rem;
 
   &__glass {
-    background: linear-gradient(
-      135deg,
-      rgba(0, 225, 255, 0.3),
-      rgba(0, 204, 255, 0.5)
-    );
-    backdrop-filter: blur(10px);
+    // background: linear-gradient(
+    //   135deg,
+    //   rgba(0, 225, 255, 0.3),
+    //   rgba(0, 204, 255, 0.5)
+    // );
+
+    background: rgba(167, 231, 244, 0.967);
+    // backdrop-filter: blur(10px);
     border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    border: 2px solid rgba(255, 255, 255, 1);
     box-shadow: $shadow-glass;
   }
 
@@ -32,6 +34,7 @@
     display: flex;
     gap: 4rem;
     padding-bottom: 15rem;
+    user-select: none;
   }
 
   &__image--container {
@@ -75,6 +78,8 @@
     align-items: stretch;
     gap: 1rem;
     width: 100%;
+    user-select: none;
+    // border-bottom: 0.2rem solid;
   }
   &__country {
     font-size: 2rem;
