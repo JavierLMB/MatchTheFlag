@@ -5,8 +5,8 @@ import * as model from "./model.js";
 import gameView from "./views/gameView.js";
 import flagView from "./views/flagView.js";
 import nameView from "./views/nameView.js";
-import scoreView from "./views/nameView.js";
-import lifeView from "./views/nameView.js";
+import scoreView from "./views/scoreView.js";
+import lifeView from "./views/lifeView.js";
 
 //////////////////////////////////////
 
@@ -27,7 +27,6 @@ const controlMatch = function (countryName, score) {
   nameView.matchCondition(model.state);
   console.log(score, "😘");
   // lifeView._lifeCounter();
-  // Issue on click
   scoreView.renderScore(score);
 };
 
@@ -36,6 +35,6 @@ const init = function () {
   nameView.addHandlerRender(controlGame);
   flagView.addHandlerClick(controlMatch);
   nameView.addHandlerClick(controlMatch);
-  lifeView.addHandlerClick(controlMatch);
+  scoreView.addHandlerClick(controlMatch);
 };
 init();

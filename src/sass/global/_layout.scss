@@ -102,18 +102,30 @@
 
 .score {
   &__container {
-    width: 20rem;
-    height: 20rem;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
 
-  &__win {
-    font-size: 2rem;
-    padding: 2rem;
+  &__final {
+    font-size: 4rem;
   }
 
-  &__lose {
+  &__result--container {
+    display: flex;
+    font-size: 5rem;
+    gap: 2rem;
+  }
+
+  // &__win {
+  // }
+
+  // &__loss {
+  // }
+
+  &__highscore {
     font-size: 2rem;
-    padding: 2rem;
+    padding-top: 10rem;
   }
 }
