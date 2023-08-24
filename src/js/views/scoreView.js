@@ -23,3 +23,4 @@ class ScoreView extends GameView {
 }
 
 export default new ScoreView();
+console.log(a);
