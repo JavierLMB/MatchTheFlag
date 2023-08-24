@@ -12,7 +12,7 @@ class ScoreView extends GameView {
           <div class="score__win">${this._data.win}</div>
           <div class="score__loss">${this._data.loss}</div>
         </div>
-        <div class="score__highscore">Current highscore! 5</div>
+        <div class="score__highscore">Current highscore! ?</div>
      </div>
      `;
     console.log(markup);

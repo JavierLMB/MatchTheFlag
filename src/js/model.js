@@ -24,12 +24,8 @@ export const loadCountryData = async function () {
       const countryObject = createCountryObject(countryData);
       state.countries.push(countryObject);
     });
-
-    // console.log(data[5]);
-    // console.log(state.countries);
   } catch (err) {
     console.log(err);
-
     throw err;
   }
 };
