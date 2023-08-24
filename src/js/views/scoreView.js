@@ -2,6 +2,8 @@ import View from "./View.js";
 import { GameView } from "./gameView.js";
 
 class ScoreView extends GameView {
+  _parentElement = document.querySelector(".container");
+
   _generateMarkup() {
     const markup = `
     <div class="score__container">
@@ -13,9 +15,10 @@ class ScoreView extends GameView {
     return markup;
   }
 
-  renderScore() {
-    if (this._score.loss !== 3) return;
-    this.render(this._score);
+  renderScore(score) {
+    console.log(this);
+    if (score.loss !== 3) return;
+    this.render(score);
   }
 }
 

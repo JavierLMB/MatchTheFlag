@@ -5,12 +5,9 @@ export class GameView extends View {
   _parentElement = document.querySelector(".container");
 
   _score = {
-    loss: 0,
     win: 0,
+    loss: 0,
   };
-
-  // _loss = 0;
-  // _win = 0;
 
   addHandlerRender(handler) {
     window.addEventListener("load", handler);
@@ -31,7 +28,8 @@ export class GameView extends View {
         )
           return;
 
-        handler(countryName);
+        const score = this._score;
+        handler(countryName, score);
       }.bind(this)
     );
   }
@@ -68,8 +66,6 @@ export class GameView extends View {
     setTimeout(() => matchedCountry.classList.remove("losser__effect"), 820);
 
     this._score.loss++;
-    console.log(this);
-    // if (this._loss !== 3) return;
   }
 
   _winCondition(state) {

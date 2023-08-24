@@ -29,6 +29,8 @@ export const loadCountryData = async function () {
     // console.log(state.countries);
   } catch (err) {
     console.log(err);
+
+    throw err;
   }
 };
 
