@@ -4,6 +4,14 @@ import { MATCHING_LIMITS } from "./../config.js";
 export class GameView extends View {
   _parentElement = document.querySelector(".container");
 
+  _score = {
+    loss: 0,
+    win: 0,
+  };
+
+  // _loss = 0;
+  // _win = 0;
+
   addHandlerRender(handler) {
     window.addEventListener("load", handler);
   }
@@ -47,7 +55,7 @@ export class GameView extends View {
     console.log(state.matching);
     this._winCondition(state);
     this._lossCondition(state);
-    if (state.score.length === 8) console.log("yessir");
+    this._scoreTrack(state);
   }
 
   _lossCondition(state) {
@@ -58,6 +66,10 @@ export class GameView extends View {
     matchedCountry.classList.remove("flag__image--active");
     matchedCountry.classList.add("losser__effect");
     setTimeout(() => matchedCountry.classList.remove("losser__effect"), 820);
+
+    this._score.loss++;
+    console.log(this);
+    // if (this._loss !== 3) return;
   }
 
   _winCondition(state) {
@@ -65,8 +77,9 @@ export class GameView extends View {
     const matchedCountry = this._findHTMLCountry(state);
     matchedCountry.classList.add("winner__effect");
     matchedCountry.classList.remove("flag__image--active");
-    this._scoreCounter(state);
     console.log(matchedCountry);
+
+    this._score.win++;
   }
 
   _clearMatchArray(state) {
@@ -96,10 +109,10 @@ export class GameView extends View {
     return matchedCountry;
   }
 
-  _scoreCounter(state) {
-    const countryPoint = state.matching.map((name) => name.split("-")[0])[0];
-
-    state.score.push(countryPoint);
+  _scoreTrack(state) {
+    state.score.win = this._score.win;
+    state.score.loss = this._score.loss;
+    console.log(state.score);
   }
 }
 

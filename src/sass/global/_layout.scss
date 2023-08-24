@@ -99,3 +99,21 @@
     }
   }
 }
+
+.score {
+  &__container {
+    width: 20rem;
+    height: 20rem;
+    display: flex;
+  }
+
+  &__win {
+    font-size: 2rem;
+    padding: 2rem;
+  }
+
+  &__lose {
+    font-size: 2rem;
+    padding: 2rem;
+  }
+}

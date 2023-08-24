@@ -69,3 +69,5 @@ const matchDecision = function () {
 
   return state.result;
 };
+
+console.log(state);
