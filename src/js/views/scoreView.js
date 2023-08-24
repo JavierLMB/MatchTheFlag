@@ -21,7 +21,7 @@ class ScoreView extends GameView {
 
   renderScore(score) {
     if (score.loss !== 3) return;
-    this.render(score);
+    setTimeout(() => this.render(score), 1000);
   }
 }
 

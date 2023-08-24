@@ -26,7 +26,7 @@ const controlMatch = function (countryName, score) {
   flagView.matchCondition(model.state);
   nameView.matchCondition(model.state);
   console.log(score, "😘");
-  // lifeView._lifeCounter();
+  lifeView._lifeCounter(score);
   scoreView.renderScore(score);
 };
 
