@@ -28,10 +28,20 @@ export class GameView extends View {
         )
           return;
         console.log(this._score, "✅");
+
+        this._lossLimit();
+
         const score = this._score;
         handler(countryName, score);
       }.bind(this)
     );
+  }
+
+  _lossLimit() {
+    if (this._score.loss >= 3) {
+      this._score.loss = 0;
+      this._score.win = 0;
+    }
   }
 
   addHandlerButton(handler) {
@@ -43,7 +53,11 @@ export class GameView extends View {
         console.log(click);
         const title = document.querySelector(".container__main--title");
         title.textContent = "Match The Flags To Their Country Names";
-
+        const hearts = document.querySelectorAll(`[data-heart]`);
+        console.log(hearts, "👀");
+        hearts.forEach((heart) =>
+          heart.classList.remove("losser__effect--heart")
+        );
         handler();
       }.bind(this)
     );
