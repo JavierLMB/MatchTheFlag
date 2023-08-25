@@ -19,6 +19,8 @@ class ScoreView extends GameView {
 
   _generateMarkup() {
     const markup = `
+    <div class="flag__container"></div>
+    <div class="name__container"></div>
       <div class="score__container">
 
         <div class="score__container--result">
