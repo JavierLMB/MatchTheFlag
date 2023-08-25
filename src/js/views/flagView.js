@@ -7,17 +7,21 @@ class FlagView extends GameView {
   _suffix = `-Flag`;
 
   _generateMarkup() {
-    return this._data
-      .map(
-        (data) => `
+    const markup =
+      `<div class="flag__container--inner">` +
+      this._data
+        .map(
+          (data) => `
        <div class="flag__image--container">
           <figure class="flag__image">
             <img data-country="${data.name}" src="${data.image}" />
           </figure>
           </div>
         `
-      )
-      .join("");
+        )
+        .join("") +
+      `</div>`;
+    return markup;
   }
 }
 

@@ -2,7 +2,7 @@ import View from "./View.js";
 import { GameView } from "./gameView.js";
 
 class LifeView extends GameView {
-  _parentElement = document.querySelector(".highscore__container");
+  _parentElement = document.querySelector(".heart__container");
 
   _lifeCounter(score) {
     if (score.loss === 0) return;

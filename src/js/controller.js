@@ -31,13 +31,7 @@ const controlMatch = function (countryName, score) {
 };
 
 const controlReMatch = async function () {
-  try {
-    await model.loadCountryData();
-    flagView.render(model.state.countries);
-    nameView.render(model.state.countries);
-  } catch (err) {
-    console.log(err);
-  }
+  controlGame();
 };
 
 const init = function () {

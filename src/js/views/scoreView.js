@@ -2,16 +2,13 @@ import View from "./View.js";
 import { GameView } from "./gameView.js";
 
 class ScoreView extends GameView {
-  _parentElement = document.querySelector(".container");
+  _parentElement = document.querySelector(".score__container");
 
   addHandlerButton(handler) {
     this._parentElement.addEventListener("click", function (e) {
       const click = e.target.closest(`.score__button`);
       if (!click) return;
       console.log(click);
-      const scoreParent = document.querySelector(".score__container");
-
-      scoreParent.innerHTML = "";
 
       handler();
     });
@@ -19,9 +16,6 @@ class ScoreView extends GameView {
 
   _generateMarkup() {
     const markup = `
-    <div class="flag__container"></div>
-    <div class="name__container"></div>
-      <div class="score__container">
 
         <div class="score__container--result">
           
@@ -29,6 +23,7 @@ class ScoreView extends GameView {
 
           <div class="score__outcome--container">
             <div class="score__win">${this._data.win}</div>
+            <div class="score__win">-</div>
             <div class="score__loss">3</div>
           </div>
           <div class="score__highscore">Current highscore! ?</div>
@@ -41,14 +36,27 @@ class ScoreView extends GameView {
           <button class="score__button score__try-again">Try Again</button>
         </div>
 
-      </div>
      `;
     return markup;
   }
 
   renderScore(score) {
     if (score.loss !== 3) return;
-    setTimeout(() => this.render(score), 1000);
+
+    setTimeout(() => {
+      this._clearFlagName(score);
+      this.render(score);
+    }, 1000);
+  }
+
+  _clearFlagName(score) {
+    const flagParent = document.querySelector(".flag__container");
+    const nameParent = document.querySelector(".name__container");
+    const title = document.querySelector(".container__main--title");
+    flagParent.innerHTML = "";
+    nameParent.innerHTML = "";
+    title.textContent =
+      score.win < 2 ? "Better luck next time!" : "Awesome job!";
   }
 }
 
