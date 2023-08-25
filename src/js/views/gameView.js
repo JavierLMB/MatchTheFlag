@@ -34,6 +34,21 @@ export class GameView extends View {
     );
   }
 
+  addHandlerButton(handler) {
+    this._parentElement.addEventListener(
+      "click",
+      function (e) {
+        const click = e.target.closest(`.score__button`);
+        if (!click) return;
+        console.log(click);
+        const title = document.querySelector(".container__main--title");
+        title.textContent = "Match The Flags To Their Country Names";
+
+        handler();
+      }.bind(this)
+    );
+  }
+
   _toggleActiveFlag(click) {
     const allElements = Array.from(document.querySelectorAll(this._target));
 
