@@ -17,8 +17,6 @@ class ScoreView extends GameView {
     });
   }
 
-  _tryAgain() {}
-
   _generateMarkup() {
     const markup = `
       <div class="score__container">
