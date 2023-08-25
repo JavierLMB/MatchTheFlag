@@ -7,6 +7,7 @@ import flagView from "./views/flagView.js";
 import nameView from "./views/nameView.js";
 import scoreView from "./views/scoreView.js";
 import lifeView from "./views/lifeView.js";
+import startView from "./views/startView.js";
 
 //////////////////////////////////////
 
@@ -32,16 +33,18 @@ const controlMatch = function (countryName, score) {
 
 const controlReMatch = async function () {
   model.resetGame();
-  scoreView.clearParent();
+  scoreView._clear();
+  startView._clear();
   controlGame();
 };
 
 const init = function () {
-  flagView.addHandlerRender(controlGame);
-  nameView.addHandlerRender(controlGame);
+  // flagView.addHandlerRender(controlGame);
+  // nameView.addHandlerRender(controlGame);
   flagView.addHandlerClick(controlMatch);
   nameView.addHandlerClick(controlMatch);
   scoreView.addHandlerClick(controlMatch);
   scoreView.addHandlerButton(controlReMatch);
+  startView.addHandlerButton(controlReMatch);
 };
 init();

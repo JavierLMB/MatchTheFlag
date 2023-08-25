@@ -3,20 +3,7 @@ import gameView, { GameView } from "./gameView.js";
 
 class ScoreView extends GameView {
   _parentElement = document.querySelector(".score__container");
-
-  // addHandlerButton(handler) {
-  //   this._parentElement.addEventListener("click", function (e) {
-  //     const click = e.target.closest(`.score__button`);
-  //     if (!click) return;
-  //     console.log(click);
-  //     const title = document.querySelector(".container__main--title");
-  //     title.textContent = "Match The Flags To Their Country Names";
-  //     // gameView._score.win = 0;
-  //     // gameView._score.loss = 0;
-  //     // console.log(gameView._score, "✈");
-  //     handler();
-  //   });
-  // }
+  _target = ".score__button";
 
   _generateMarkup() {
     const markup = `
@@ -60,10 +47,6 @@ class ScoreView extends GameView {
     nameParent.innerHTML = "";
     title.textContent =
       score.win < 2 ? "Better luck next time!" : "Awesome job!";
-  }
-
-  clearParent() {
-    this._parentElement.innerHTML = "";
   }
 }
 

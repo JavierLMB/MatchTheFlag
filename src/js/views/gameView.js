@@ -9,9 +9,9 @@ export class GameView extends View {
     loss: 0,
   };
 
-  addHandlerRender(handler) {
-    window.addEventListener("load", handler);
-  }
+  // addHandlerRender(handler) {
+  //   window.addEventListener("load", handler);
+  // }
 
   addHandlerClick(handler) {
     this._parentElement.addEventListener(
@@ -48,19 +48,19 @@ export class GameView extends View {
     this._parentElement.addEventListener(
       "click",
       function (e) {
-        const click = e.target.closest(`.score__button`);
+        const click = e.target.closest(this._target);
         if (!click) return;
-        console.log(click);
-        const title = document.querySelector(".container__main--title");
-        title.textContent = "Match The Flags To Their Country Names";
-        const hearts = document.querySelectorAll(`[data-heart]`);
-        console.log(hearts, "👀");
-        hearts.forEach((heart) =>
-          heart.classList.remove("losser__effect--heart")
-        );
+        this._mainViewReset();
         handler();
       }.bind(this)
     );
+  }
+
+  _mainViewReset() {
+    const title = document.querySelector(".container__main--title");
+    title.textContent = "Match The Flags To Their Country Names";
+    const hearts = document.querySelectorAll(`[data-heart]`);
+    hearts.forEach((heart) => heart.classList.remove("losser__effect--heart"));
   }
 
   _toggleActiveFlag(click) {
