@@ -30,11 +30,22 @@ const controlMatch = function (countryName, score) {
   scoreView.renderScore(score);
 };
 
+const controlReMatch = async function () {
+  try {
+    await model.loadCountryData();
+    flagView.render(model.state.countries);
+    nameView.render(model.state.countries);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 const init = function () {
   flagView.addHandlerRender(controlGame);
   nameView.addHandlerRender(controlGame);
   flagView.addHandlerClick(controlMatch);
   nameView.addHandlerClick(controlMatch);
   scoreView.addHandlerClick(controlMatch);
+  scoreView.addHandlerButton(controlReMatch);
 };
 init();

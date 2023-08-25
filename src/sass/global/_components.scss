@@ -50,3 +50,76 @@
   transform: translateY(-3rem) !important;
   pointer-events: none;
 }
+
+.score {
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    &--result {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 5rem;
+      gap: 2rem;
+    }
+
+    &--button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 2rem;
+      gap: 1.5rem;
+    }
+  }
+
+  &__final {
+    font-size: 4rem;
+  }
+
+  &__outcome--container {
+    display: flex;
+    font-size: 5rem;
+    gap: 2rem;
+  }
+
+  // &__win {
+  // }
+
+  // &__loss {
+  // }
+
+  &__highscore {
+    font-size: 2rem;
+  }
+
+  &__button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    color: white;
+  }
+
+  &__try-again {
+    background-color: #e74c3c;
+
+    &:hover {
+      background-color: #c0392b;
+    }
+  }
+
+  &__home {
+    background-color: #2ecc71;
+
+    &:hover {
+      background-color: #27ae60;
+    }
+  }
+}

@@ -99,33 +99,3 @@
     }
   }
 }
-
-.score {
-  &__container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-
-  &__final {
-    font-size: 4rem;
-  }
-
-  &__result--container {
-    display: flex;
-    font-size: 5rem;
-    gap: 2rem;
-  }
-
-  // &__win {
-  // }
-
-  // &__loss {
-  // }
-
-  &__highscore {
-    font-size: 2rem;
-    padding-top: 10rem;
-  }
-}

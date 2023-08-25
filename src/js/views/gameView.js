@@ -27,7 +27,7 @@ export class GameView extends View {
           countryName !== activeElementCountry + this._suffix
         )
           return;
-
+        console.log(this._score, "✅");
         const score = this._score;
         handler(countryName, score);
       }.bind(this)
