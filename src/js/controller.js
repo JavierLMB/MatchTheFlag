@@ -31,7 +31,9 @@ const controlMatch = function (countryName, score) {
 };
 
 const controlReMatch = async function () {
+  model.resetGame();
   controlGame();
+  scoreView.clearParent();
 };
 
 const init = function () {

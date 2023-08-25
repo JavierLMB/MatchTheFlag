@@ -68,4 +68,10 @@ const matchDecision = function () {
   return state.result;
 };
 
+export const resetGame = function () {
+  state.countries = [];
+  state.matching = [];
+  state.score = [];
+};
+
 console.log(state);
