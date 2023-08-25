@@ -34,17 +34,14 @@ class ScoreView extends GameView {
     if (score.loss !== 3) return;
 
     setTimeout(() => {
-      this._clearFlagName(score);
+      this._clearFlagName();
+      this._setRenderTitle(score);
       this.render(score);
     }, 1000);
   }
 
-  _clearFlagName(score) {
-    const flagParent = document.querySelector(".flag__container");
-    const nameParent = document.querySelector(".name__container");
+  _setRenderTitle(score) {
     const title = document.querySelector(".container__main--title");
-    flagParent.innerHTML = "";
-    nameParent.innerHTML = "";
     title.textContent =
       score.win < 2 ? "Better luck next time!" : "Awesome job!";
   }

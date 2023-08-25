@@ -139,6 +139,23 @@ export class GameView extends View {
     state.score.loss = this._score.loss;
     console.log(state.score);
   }
+
+  // _generateMore(score, handler, resetGame) {
+  //   if (score.win % 4 !== 0 || score.win === 0) return;
+
+  //   console.log(score, "SCOREEEEE");
+
+  //   this._clearFlagName();
+  //   resetGame();
+  //   handler();
+  // }
+
+  _clearFlagName() {
+    const flagParent = document.querySelector(".flag__container");
+    const nameParent = document.querySelector(".name__container");
+    flagParent.innerHTML = "";
+    nameParent.innerHTML = "";
+  }
 }
 
 export default new GameView();
