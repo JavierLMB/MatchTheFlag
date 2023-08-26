@@ -3,7 +3,7 @@ import gameView, { GameView } from "./gameView.js";
 
 class ScoreView extends GameView {
   _parentElement = document.querySelector(".score__container");
-  _target = ".score__button";
+  _target = ".score__try-again";
 
   _generateMarkup() {
     const markup = `

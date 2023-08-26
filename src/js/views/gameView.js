@@ -140,15 +140,16 @@ export class GameView extends View {
     console.log(state.score);
   }
 
-  // _generateMore(score, handler, resetGame) {
-  //   if (score.win % 4 !== 0 || score.win === 0) return;
+  _generateMore(score, handler, resetGame) {
+    if (score.win % 4 !== 0 || score.win === 0) return;
+    this._score.win = 0;
 
-  //   console.log(score, "SCOREEEEE");
+    console.log(score, "SCOREEEEE");
 
-  //   this._clearFlagName();
-  //   resetGame();
-  //   handler();
-  // }
+    this._clearFlagName();
+    resetGame();
+    handler();
+  }
 
   _clearFlagName() {
     const flagParent = document.querySelector(".flag__container");

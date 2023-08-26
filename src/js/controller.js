@@ -29,7 +29,7 @@ const controlMatch = function (countryName, score) {
   console.log(score, "😘");
   lifeView._lifeCounter(score);
   scoreView.renderScore(score);
-  // gameView._generateMore(score, controlGame, model.resetGame);
+  gameView._generateMore(score, controlGame, model.resetGame);
 };
 
 const controlReMatch = async function () {
