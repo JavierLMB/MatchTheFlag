@@ -7,6 +7,7 @@ export class GameView extends View {
   _score = {
     win: 0,
     loss: 0,
+    finalWins: 0,
   };
 
   // addHandlerRender(handler) {
@@ -47,6 +48,9 @@ export class GameView extends View {
 
   _nextRound() {
     if (this._score.win % 4 !== 0 || this._score.win === 0) return;
+    this._score.finalWins++;
+    this._score.finalWins *= 4;
+    console.log(this._score.finalWins, "💣");
     this._score.win = 0;
   }
 
