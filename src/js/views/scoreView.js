@@ -12,7 +12,7 @@ class ScoreView extends GameView {
           
 
           <div class="score__outcome--container">
-            <div class="score__win">${this._data.win}</div>
+            <div class="score__win">${this._data.finalWins}</div>
             <div class="score__win">-</div>
             <div class="score__loss">3</div>
           </div>

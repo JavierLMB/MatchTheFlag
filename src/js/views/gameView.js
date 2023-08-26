@@ -43,14 +43,12 @@ export class GameView extends View {
     if (this._score.loss >= 3) {
       this._score.loss = 0;
       this._score.win = 0;
+      this._score.finalWins = 0;
     }
   }
 
   _nextRound() {
     if (this._score.win % 4 !== 0 || this._score.win === 0) return;
-    this._score.finalWins++;
-    this._score.finalWins *= 4;
-    console.log(this._score.finalWins, "💣");
     this._score.win = 0;
   }
 
@@ -114,6 +112,7 @@ export class GameView extends View {
     matchedCountry.classList.remove("flag__image--active");
     console.log(matchedCountry);
 
+    this._score.finalWins++;
     this._score.win++;
   }
 
