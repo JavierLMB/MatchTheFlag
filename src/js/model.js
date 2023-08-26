@@ -72,7 +72,7 @@ export const resetGame = function () {
   state.result = "";
   state.countries = [];
   state.matching = [];
-  state.score.win = 0;
+  state.score = [];
 };
 
 console.log(state);

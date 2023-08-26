@@ -142,7 +142,7 @@ export class GameView extends View {
 
   _generateMore(score, handler, resetGame) {
     if (score.win % 4 !== 0 || score.win === 0) return;
-    this._score.win = 0;
+    score.win = 0;
 
     console.log(score, "SCOREEEEE");
 
