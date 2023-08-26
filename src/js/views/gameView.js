@@ -30,6 +30,7 @@ export class GameView extends View {
         console.log(this._score, "✅");
 
         this._lossLimit();
+        this._nextRound();
 
         const score = this._score;
         handler(countryName, score);
@@ -42,6 +43,11 @@ export class GameView extends View {
       this._score.loss = 0;
       this._score.win = 0;
     }
+  }
+
+  _nextRound() {
+    if (this._score.win % 4 !== 0 || this._score.win === 0) return;
+    this._score.win = 0;
   }
 
   addHandlerButton(handler) {
@@ -142,10 +148,7 @@ export class GameView extends View {
 
   _generateMore(score, handler, resetGame) {
     if (score.win % 4 !== 0 || score.win === 0) return;
-    score.win = 0;
-
     console.log(score, "SCOREEEEE");
-
     this._clearFlagName();
     resetGame();
     handler();
