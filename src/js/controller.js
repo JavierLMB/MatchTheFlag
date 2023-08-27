@@ -47,5 +47,6 @@ const init = function () {
   scoreView.addHandlerClick(controlMatch);
   scoreView.addHandlerButton(controlReMatch);
   startView.addHandlerButton(controlReMatch);
+  gameView._highScoreGlobal();
 };
 init();
