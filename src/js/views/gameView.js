@@ -54,8 +54,7 @@ export class GameView extends View {
   }
 
   _highScore() {
-    if (this._score.finalWins < this._score.highScore && this._score.loss === 3)
-      return;
+    if (this._score.finalWins < this._score.highScore) return;
 
     this._score.highScore = this._score.finalWins;
 
