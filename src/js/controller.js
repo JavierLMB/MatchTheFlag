@@ -40,8 +40,6 @@ const controlReMatch = async function () {
 };
 
 const init = function () {
-  // flagView.addHandlerRender(controlGame);
-  // nameView.addHandlerRender(controlGame);
   flagView.addHandlerClick(controlMatch);
   nameView.addHandlerClick(controlMatch);
   scoreView.addHandlerClick(controlMatch);

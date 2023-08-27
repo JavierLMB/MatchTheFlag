@@ -43,7 +43,7 @@ class ScoreView extends GameView {
   _setRenderTitle(score) {
     const title = document.querySelector(".container__main--title");
     title.textContent =
-      score.win < 2 ? "Better luck next time!" : "Awesome job!";
+      score.win < 5 ? "Better luck next time!" : "Awesome job!";
   }
 }
 

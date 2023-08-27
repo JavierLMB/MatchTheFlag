@@ -8,7 +8,7 @@ export class GameView extends View {
     win: 0,
     loss: 0,
     finalWins: 0,
-    highScore: 0,
+    highScore: this._highScoreGlobal() ? this._highScoreGlobal() : 0,
   };
 
   addHandlerClick(handler) {
@@ -42,6 +42,9 @@ export class GameView extends View {
       this._score.loss = 0;
       this._score.win = 0;
       this._score.finalWins = 0;
+      this._score.highScore = this._highScoreGlobal()
+        ? this._highScoreGlobal()
+        : 0;
     }
   }
 
@@ -51,7 +54,8 @@ export class GameView extends View {
   }
 
   _highScore() {
-    if (this._score.finalWins < this._score.highScore) return;
+    if (this._score.finalWins < this._score.highScore && this._score.loss === 3)
+      return;
 
     this._score.highScore = this._score.finalWins;
 
@@ -64,9 +68,7 @@ export class GameView extends View {
 
   _highScoreGlobal() {
     let highScore = localStorage.getItem("highScore");
-
-    this._score.highScore = highScore;
-    console.log(highScore, "global");
+    return highScore;
   }
 
   addHandlerButton(handler) {
@@ -184,4 +186,5 @@ export class GameView extends View {
 
 export default new GameView();
 
-// localStorage.removeItem("highScore");
+// Reset highscore
+localStorage.removeItem("highScore");
