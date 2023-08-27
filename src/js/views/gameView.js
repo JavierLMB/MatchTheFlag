@@ -8,11 +8,8 @@ export class GameView extends View {
     win: 0,
     loss: 0,
     finalWins: 0,
+    highScore: 0,
   };
-
-  // addHandlerRender(handler) {
-  //   window.addEventListener("load", handler);
-  // }
 
   addHandlerClick(handler) {
     this._parentElement.addEventListener(
@@ -30,6 +27,7 @@ export class GameView extends View {
           return;
         console.log(this._score, "✅");
 
+        this._highScore();
         this._lossLimit();
         this._nextRound();
 
@@ -50,6 +48,19 @@ export class GameView extends View {
   _nextRound() {
     if (this._score.win % 4 !== 0 || this._score.win === 0) return;
     this._score.win = 0;
+  }
+
+  _highScore() {
+    // localStorage.removeItem("highscore");
+    // if (this._score.loss < 3) return;
+    if (this._score.finalWins < this._score.highScore) return;
+
+    this._score.highScore = this._score.finalWins;
+
+    localStorage.setItem("highScore", this._score.highScore);
+    let highScore = localStorage.getItem("highScore");
+
+    this._score.highScore = highScore;
   }
 
   addHandlerButton(handler) {
