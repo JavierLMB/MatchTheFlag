@@ -24,10 +24,10 @@ const controlGame = async function () {
 };
 
 const controlMatch = function (countryName, score) {
-  console.log(countryName);
   model.matchGame(countryName);
   flagView.matchCondition(model.state);
   nameView.matchCondition(model.state);
+  console.log(model.state.matching);
   console.log(score, "😘");
   gameView._generateMore(score, controlGame, model.resetGame);
   lifeView._lifeCounter(score);

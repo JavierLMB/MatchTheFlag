@@ -25,7 +25,7 @@ export class GameView extends View {
           countryName !== activeElementCountry + this._suffix
         )
           return;
-        console.log(this._score, "✅");
+        // console.log(this._score, "✅");
 
         this._highScore();
         this._lossLimit();
@@ -128,7 +128,6 @@ export class GameView extends View {
 
   matchCondition(state) {
     this._clearMatchArray(state);
-    console.log(state.matching);
     this._winCondition(state);
     this._lossCondition(state);
     this._scoreTrack(state);
@@ -187,7 +186,7 @@ export class GameView extends View {
   _scoreTrack(state) {
     state.score.win = this._score.win;
     state.score.loss = this._score.loss;
-    console.log(state.score);
+    // console.log(state.score);
   }
 
   _generateMore(score, handler, resetGame) {

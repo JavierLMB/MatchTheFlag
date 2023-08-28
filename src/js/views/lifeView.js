@@ -11,7 +11,6 @@ class LifeView extends GameView {
     const fullHealth = this._parentElement.querySelector(
       `[data-heart="${score.loss}"]`
     );
-    console.log(fullHealth);
     fullHealth.classList.add("losser__effect--heart");
   }
 }
