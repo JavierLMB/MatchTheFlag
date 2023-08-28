@@ -64,8 +64,8 @@
 
   &__count {
     font-size: 5rem;
-    background: #140c18;
-    color: hsl(172, 100%, 60%);
+    background: hsl(0, 0%, 8%);
+    color: hsl(0, 0%, 100%);
     padding: 0rem 2rem;
   }
 
@@ -160,7 +160,7 @@
     text-align: center;
     text-decoration: none;
     transition: background-color 0.3s ease;
-    color: white;
+    color: hsl(0, 0%, 100%);
     background-color: #2ecc71;
 
     &:hover {
