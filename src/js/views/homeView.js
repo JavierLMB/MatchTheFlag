@@ -3,12 +3,15 @@ import gameView, { GameView } from "./gameView.js";
 
 class homeView extends GameView {
   _parentElement = document.querySelector(".score__container");
+  _parentStart = document.querySelector(".start__container");
   _target = ".score__home";
 
   _generateMarkup() {
     const markup = `
 
-    <button class="start__button">Start</button>
+    <div class="start__container">
+      <button class="start__button">Start</button>
+    </div>
 
      `;
     return markup;
@@ -17,7 +20,7 @@ class homeView extends GameView {
   renderHome() {
     const markup = this._generateMarkup();
     this._clear();
-    this._parentElement.insertAdjacentHTML("afterbegin", markup);
+    this._parentStart.insertAdjacentHTML("afterbegin", markup);
   }
 }
 

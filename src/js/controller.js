@@ -45,7 +45,7 @@ const controlReMatch = function () {
 const controlHome = function () {
   model.resetGame();
   scoreView._clear();
-  startView.render();
+  homeView.renderHome();
 };
 
 const init = function () {
@@ -54,7 +54,7 @@ const init = function () {
   scoreView.addHandlerClick(controlMatch);
   scoreView.addHandlerGame(controlReMatch);
   startView.addHandlerGame(controlReMatch);
-  // homeView.addHandlerHome(controlHome);
+  homeView.addHandlerHome(controlHome);
   gameView._highScoreGlobal();
 };
 init();
