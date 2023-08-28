@@ -1,17 +1,19 @@
 @use "_base" as *;
 
 .container {
-  width: 60vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  width: 65vw;
   min-height: 70vh;
   margin: 4vh auto;
   border-radius: $border-radius;
   overflow: hidden;
-  padding: 10rem;
+  padding: 2rem 10rem 2rem 15rem;
   // background: hsl(172, 60%, 65%);
-  background: hsl(172, 100%, 30%);
+  // background: hsl(172, 100%, 30%);
   background: linear-gradient(hsl(172, 100%, 40%) 0%, hsl(172, 100%, 35%) 100%);
-
-  // background: rgba(167, 231, 244, 0.967);
   // backdrop-filter: blur(10px);
   border-radius: 20px;
   // border: 10px solid hsl(172, 100%, 30%);
@@ -96,7 +98,7 @@
     place-items: center;
     will-change: transform;
     transition: transform 450ms;
-    background: hsl(230, 5%, 15%);
+    background: #140c18;
     color: hsl(172, 100%, 60%);
     // border: 1px solid hsl(172, 100%, 50%);
 

@@ -8,6 +8,7 @@ import nameView from "./views/nameView.js";
 import scoreView from "./views/scoreView.js";
 import lifeView from "./views/lifeView.js";
 import startView from "./views/startView.js";
+import counterView from "./views/counterView.js";
 
 //////////////////////////////////////
 
@@ -30,6 +31,7 @@ const controlMatch = function (countryName, score) {
   gameView._generateMore(score, controlGame, model.resetGame);
   lifeView._lifeCounter(score);
   scoreView.renderScore(score);
+  counterView._winCounter(score);
 };
 
 const controlReMatch = async function () {
