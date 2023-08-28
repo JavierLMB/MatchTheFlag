@@ -203,7 +203,7 @@ export class GameView extends View {
     const counterParent = document.querySelector(".counter__count");
     flagParent.innerHTML = "";
     nameParent.innerHTML = "";
-    counterParent.innerHTML = "";
+    counterParent.classList.add("counter__hidden");
   }
 }
 
