@@ -211,4 +211,4 @@ export class GameView extends View {
 export default new GameView();
 
 // Reset highscore
-localStorage.removeItem("highScore");
+// localStorage.removeItem("highScore");
