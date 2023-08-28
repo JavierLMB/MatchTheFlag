@@ -70,7 +70,28 @@ export class GameView extends View {
     return highScore;
   }
 
-  addHandlerButton(handler) {
+  addHandlerHome(handler) {
+    this._parentElement.addEventListener(
+      "click",
+      function (e) {
+        const click = e.target.closest(this._target);
+        if (!click) return;
+        this._scoreViewReset();
+        handler();
+      }.bind(this)
+    );
+  }
+
+  _scoreViewReset() {
+    const title = document.querySelector(".container__main--title");
+    title.textContent = "Match The Flags To Their Country Names";
+    const hearts = document.querySelectorAll(`[data-heart]`);
+    hearts.forEach((heart) => heart.classList.add("losser__effect--heart"));
+    const winCounter = document.querySelector(".counter__count");
+    winCounter.classList.add("counter__hidden");
+  }
+
+  addHandlerGame(handler) {
     this._parentElement.addEventListener(
       "click",
       function (e) {

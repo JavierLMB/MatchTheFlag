@@ -9,6 +9,7 @@ import scoreView from "./views/scoreView.js";
 import lifeView from "./views/lifeView.js";
 import startView from "./views/startView.js";
 import counterView from "./views/counterView.js";
+import homeView from "./views/homeView.js";
 
 //////////////////////////////////////
 
@@ -34,19 +35,26 @@ const controlMatch = function (countryName, score) {
   counterView._winCounter(score);
 };
 
-const controlReMatch = async function () {
+const controlReMatch = function () {
   model.resetGame();
   scoreView._clear();
   startView._clear();
   controlGame();
 };
 
+const controlHome = function () {
+  model.resetGame();
+  scoreView._clear();
+  startView.render();
+};
+
 const init = function () {
   flagView.addHandlerClick(controlMatch);
   nameView.addHandlerClick(controlMatch);
   scoreView.addHandlerClick(controlMatch);
-  scoreView.addHandlerButton(controlReMatch);
-  startView.addHandlerButton(controlReMatch);
+  scoreView.addHandlerGame(controlReMatch);
+  startView.addHandlerGame(controlReMatch);
+  // homeView.addHandlerHome(controlHome);
   gameView._highScoreGlobal();
 };
 init();
