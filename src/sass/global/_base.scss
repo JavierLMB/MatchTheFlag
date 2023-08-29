@@ -60,3 +60,25 @@ body {
 h1 {
   font-weight: 600;
 }
+
+.btn-push {
+  background: hsl(0, 60%, 30%);
+  border-radius: 12px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+}
+.btn-front {
+  display: block;
+  padding: 2rem 7rem;
+  border-radius: 12px;
+  font-size: 4rem;
+  background: hsl(0, 60%, 50%);
+  color: white;
+  transform: translateY(-6px);
+}
+
+.btn-push:active .btn-front {
+  transform: translateY(-2px);
+}

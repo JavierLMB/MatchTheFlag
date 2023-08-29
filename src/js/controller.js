@@ -48,6 +48,13 @@ const controlHome = function () {
   homeView.renderHome();
 };
 
+// const controlLibrary = function (goToPage) {
+//   // 1) Render NEW results
+//   resultsView.render(model.getSearchResutlsPage(goToPage));
+//   // 2) Render NEW pagination buttons
+//   paginationView.render(model.state.search);
+// };
+
 const init = function () {
   flagView.addHandlerClick(controlMatch);
   nameView.addHandlerClick(controlMatch);

@@ -146,25 +146,18 @@
 .start {
   &__container {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-direction: column;
     user-select: none;
   }
 
   &__button {
-    padding: 10px 20px;
-    font-size: 5rem;
-
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-    color: hsl(0, 0%, 100%);
-    background-color: #2ecc71;
-
-    &:hover {
-      background-color: #27ae60;
+    &--library {
+      background: hsl(125, 40%, 30%);
+      & span {
+        background: hsl(125, 40%, 50%);
+      }
     }
   }
 }
