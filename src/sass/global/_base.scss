@@ -61,20 +61,8 @@ h1 {
   font-size: 15rem;
 }
 
-.btn-front {
-  font-family: inherit;
-  cursor: pointer;
-  border-radius: 0.5rem;
-  padding: 1.5rem 5rem;
-  font-size: 3rem;
-  color: white;
-
-  &:hover {
-    transition: background-color 0.1s;
-  }
-}
-
-.hidden {
-  position: absolute;
-  opacity: 0;
-}
+// .flag__image--active {
+//   transition: border-radius 0.5s, border 0.5s !important;
+//   border: 3px solid hsl(334, 100%, 60%) !important;
+//   border-radius: 0rem !important;
+// }

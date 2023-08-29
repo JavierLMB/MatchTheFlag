@@ -120,13 +120,13 @@ export class GameView extends View {
     const allElements = Array.from(document.querySelectorAll(this._target));
 
     const activeElement = allElements.find((click) =>
-      click.classList.contains("flag__image--active")
+      click.classList.contains("select--active")
     );
 
     const activeElementCountry = activeElement?.getAttribute("data-country");
 
-    if (!activeElement) click.classList.toggle("flag__image--active");
-    if (activeElement) click.classList.remove("flag__image--active");
+    if (!activeElement) click.classList.toggle("select--active");
+    if (activeElement) click.classList.remove("select--active");
     return activeElementCountry;
   }
 
@@ -142,7 +142,7 @@ export class GameView extends View {
     if (state.matching.length < MATCHING_LIMITS) return;
 
     const matchedCountry = this._findHTMLCountry(state);
-    matchedCountry.classList.remove("flag__image--active");
+    matchedCountry.classList.remove("select--active");
     matchedCountry.classList.add("losser__effect");
     setTimeout(() => matchedCountry.classList.remove("losser__effect"), 820);
 
@@ -153,7 +153,7 @@ export class GameView extends View {
     if (state.result !== "win") return;
     const matchedCountry = this._findHTMLCountry(state);
     matchedCountry.classList.add("winner__effect");
-    matchedCountry.classList.remove("flag__image--active");
+    matchedCountry.classList.remove("select--active");
     console.log(matchedCountry);
 
     this._score.finalWins++;

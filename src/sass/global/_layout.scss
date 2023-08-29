@@ -12,7 +12,7 @@
   padding: 4rem 5rem 4rem 5rem;
   background: hsl(0, 0%, 15%);
   border-radius: 20px;
-  border: 2px solid hsl(0, 0%, 60%);
+  border: 2px solid hsl(334, 100%, 80%);
   box-shadow: $shadow-glass;
   gap: 1rem;
 
@@ -44,7 +44,7 @@
     transition: border-bottom 0.5s;
 
     &:hover {
-      border-bottom: 2px solid hsl(334, 68%, 40%);
+      border-bottom: 2px solid hsl(334, 100%, 60%);
     }
   }
 
@@ -66,13 +66,9 @@
       transition: transform 450ms;
       box-shadow: $shadow-country;
       border-radius: 1.5rem;
-      transition: border-radius 0.5s;
-    }
-
-    &--active {
-      transition: transform 150ms;
-      transform: translateY(-20px);
-      opacity: 0.7;
+      transition: border-radius 0.5s, border 0.5s;
+      // transition: border-radius 0.5s, border 0.5s !important;
+      border: 3px solid hsl(334, 100%, 60%, 0);
     }
   }
 }
@@ -101,17 +97,45 @@
     transition: transform 450ms;
     background: hsl(0, 0%, 8%);
     color: hsl(0, 0%, 100%);
-    border-bottom: 2px solid hsl(334, 68%, 40%);
+    border: 3px solid hsl(334, 100%, 60%, 0);
+
+    border-bottom: 3px solid hsl(334, 68%, 40%);
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
-    transition: border-bottom 0.5s;
+    transition: border-radius 0.5s, border 0.5s;
+    // transition: border-radius 0.5s, border 0.5s !important;
 
     &--container {
       &:hover .name__country {
-        // transition: transform 150ms;
-        // transform: translateY(-10px);
-        border-bottom: 2px solid hsl(334, 100%, 60%);
+        border-bottom: 3px solid hsl(334, 100%, 60%);
       }
     }
+  }
+}
+
+.select--active[data-country] {
+  transition: border-radius 0.5s, border 0.5s;
+  border: 3px solid hsl(334, 100%, 60%);
+  border-radius: 0rem;
+}
+
+.winner__effect[data-country] {
+  transition: opacity 1s ease-out, border 0.1s;
+  opacity: 0;
+  pointer-events: none;
+  border: 3px solid rgba(128, 255, 0, 0.5);
+  &:hover {
+    border-bottom: 3px solid rgba(128, 255, 0, 0.5);
+  }
+}
+
+// Fix for tmr
+
+.losser__effect[data-country] {
+  transition: border 0.1s, translate3d(0, 0, 0);
+  border: 3px solid rgba(255, 0, 0, 0.5);
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  &:hover {
+    border-bottom: 3px solid rgba(255, 0, 0, 0.5);
   }
 }
