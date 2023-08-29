@@ -53,13 +53,13 @@
   opacity: 0 !important;
   transform: translateY(-3rem) !important;
   pointer-events: none;
+  position: absolute;
 }
 
 .counter {
   &__container {
     display: flex;
     justify-content: center;
-    padding-top: 1rem;
   }
 
   &__count {
@@ -67,6 +67,9 @@
     background: hsl(0, 0%, 8%);
     color: hsl(0, 0%, 100%);
     padding: 0rem 2rem;
+    border-left: 2px solid hsl(334, 68%, 40%);
+    border-right: 2px solid hsl(334, 68%, 40%);
+    border-radius: 1rem;
   }
 
   &__hidden {
@@ -149,15 +152,21 @@
     align-items: center;
     gap: 2rem;
     flex-direction: column;
-    user-select: none;
   }
 
   &__button {
-    &--library {
-      background: hsl(125, 40%, 30%);
-      & span {
-        background: hsl(125, 40%, 50%);
-      }
+    background: hsl(0, 30%, 50%);
+
+    &:hover {
+      background: hsl(0, 30%, 30%);
+    }
+  }
+
+  &__library {
+    background: hsl(125, 20%, 50%);
+
+    &:hover {
+      background: hsl(125, 20%, 30%);
     }
   }
 }

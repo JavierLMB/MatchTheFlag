@@ -87,8 +87,10 @@ export class GameView extends View {
     title.textContent = "Match The Flags To Their Country Names";
     const hearts = document.querySelectorAll(`[data-heart]`);
     hearts.forEach((heart) => heart.classList.add("losser__effect--heart"));
+    const heartsContainer = document.querySelector(".heart__container");
+    heartsContainer.classList.add("hidden");
     const winCounter = document.querySelector(".counter__count");
-    winCounter.classList.add("counter__hidden");
+    winCounter.classList.add("hidden");
   }
 
   addHandlerGame(handler) {
@@ -108,8 +110,10 @@ export class GameView extends View {
     title.textContent = "Match The Flags To Their Country Names";
     const hearts = document.querySelectorAll(`[data-heart]`);
     hearts.forEach((heart) => heart.classList.remove("losser__effect--heart"));
+    const heartsContainer = document.querySelector(".heart__container");
+    heartsContainer.classList.remove("hidden");
     const winCounter = document.querySelector(".counter__count");
-    winCounter.classList.remove("counter__hidden");
+    winCounter.classList.remove("hidden");
   }
 
   _toggleActiveFlag(click) {
@@ -203,7 +207,7 @@ export class GameView extends View {
     const counterParent = document.querySelector(".counter__count");
     flagParent.innerHTML = "";
     nameParent.innerHTML = "";
-    counterParent.classList.add("counter__hidden");
+    counterParent.classList.add("hidden");
   }
 }
 

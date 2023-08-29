@@ -12,10 +12,10 @@ class FlagView extends GameView {
       this._data
         .map(
           (data) => `
-       <div class="flag__image--container">
-          <figure class="flag__image">
+          <div class="flag__image--container">
+           <figure class="flag__image">
             <img data-country="${data.name}" src="${data.image}" />
-          </figure>
+           </figure>
           </div>
         `
         )

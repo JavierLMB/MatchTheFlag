@@ -1,5 +1,5 @@
 // Colors
-$color-primary: #f38e82;
+$color-primary: hsl(334, 68%, 40%);
 $color-grad-1: #fbdb89;
 $color-grad-2: #f48982;
 
@@ -21,7 +21,8 @@ $border-radius: 1.2rem;
 
 // Shadows
 // $shadow-glass: 0 0px 40px 5px rgba(0, 0, 0, 0.2);
-$shadow-glass: 0 0px 25px 0px hsla(0, 0%, 40%, 0.2);
+// $shadow-glass: 0 0px 25px 0px hsla(0, 0%, 40%, 0.2);
+$shadow-glass: 0 0px 25px 5px hsl(334, 68%, 40%);
 $shadow-country: 0px 0px 15px -5px rgba(0, 0, 0, 0.9);
 
 * {
@@ -44,11 +45,9 @@ body {
   font-family: "Rubik", sans-serif;
   height: 100vh;
   line-height: 1.6;
-  // color: hsl(230, 5%, 15%);
   color: hsl(0, 0%, 100%);
-  // background: hsl(230, 5%, 5%);
-  // background: #140c18;
-  background: hsl(0, 0%, 8%);
+  background: url(../imgs/blob-scene-haikei.svg);
+  // background: hsl(0, 0%, 8%);
   background-size: cover;
   background-repeat: no-repeat;
   min-height: calc(100vh - 2 * 4vw);
@@ -59,26 +58,23 @@ body {
 
 h1 {
   font-weight: 600;
+  font-size: 15rem;
 }
 
-.btn-push {
-  background: hsl(0, 60%, 30%);
-  border-radius: 12px;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  outline-offset: 4px;
-}
 .btn-front {
-  display: block;
-  padding: 2rem 7rem;
-  border-radius: 12px;
-  font-size: 4rem;
-  background: hsl(0, 60%, 50%);
+  font-family: inherit;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  padding: 1.5rem 5rem;
+  font-size: 3rem;
   color: white;
-  transform: translateY(-6px);
+
+  &:hover {
+    transition: background-color 0.1s;
+  }
 }
 
-.btn-push:active .btn-front {
-  transform: translateY(-2px);
+.hidden {
+  position: absolute;
+  opacity: 0;
 }

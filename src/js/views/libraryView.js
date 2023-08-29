@@ -6,7 +6,7 @@
 
 //   addHandlerClick(handler) {
 //     this._parentElement.addEventListener("click", function (e) {
-//       const btn = e.target.closest(`.start__button--library`);
+//       const btn = e.target.closest(`.start__library`);
 //       if (!btn) return;
 //       const goToPage = +btn.dataset.goto;
 //       handler(goToPage);
