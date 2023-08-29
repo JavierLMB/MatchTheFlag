@@ -10,12 +10,8 @@ class homeView extends GameView {
     const markup = `
 
       <div class="start__container">
-        <button class="start__button btn-push">
-          <span class="btn-front">Start</span>
-        </button>
-        <button class="start__library btn-push">
-          <span class="btn-front">Library</span>
-        </button>
+        <button class="start__button btn-front">Start</button>
+        <button class="start__library btn-front">Library</button>
       </div>
 
      `;
