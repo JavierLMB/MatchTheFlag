@@ -5,7 +5,8 @@
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  width: auto;
+  width: clamp(auto, 65vw, 80vw);
+  // width: auto;
   // width: clamp(200px, 65vw, 80vw);
   // width: min(95vw, 65vw);
   // margin: 4vh auto;
@@ -20,7 +21,7 @@
   padding: $spacing-3xl-preferred;
   gap: $spacing-sm-preferred;
   z-index: 1;
-  // margin: 1rem;
+  margin: 1rem;
 
   &__main--title {
     font-size: $font-medium;
@@ -47,10 +48,12 @@
   }
 
   &__image--container {
+    display: flex;
+    justify-content: center;
     max-width: 30rem;
     position: relative;
     background: $color-accent-dark;
-    flex: 1 1 calc(50% - #{$spacing-md-preferred / 2});
+    // flex: 1 1 calc(50% - #{$spacing-md-preferred / 2});
     // padding: 2rem;
     // border-bottom: 3px solid $color-hidden;
     padding: $spacing-3xl-max;
@@ -148,5 +151,32 @@
   border: 3px solid $winner-effect;
   &:hover {
     border-bottom: 3px solid $winner-effect;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    height: 90%;
+  }
+
+  .flag__container--inner {
+  }
+
+  .flag__image--container {
+    padding: 1rem;
+    max-width: 45%;
+    // max-width: 45%;
+  }
+
+  .flag__image {
+    width: 100%;
+
+    & img {
+      // width: 50%;
+    }
+  }
+
+  .name__country {
+    font-size: 5rem;
   }
 }
