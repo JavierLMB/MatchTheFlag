@@ -9,7 +9,9 @@ class homeView extends GameView {
   _generateMarkup() {
     const markup = `
 
+
       <div class="start__container">
+        <img class="world-map" src="/world.67d631da.svg">
         <button class="start__button btn-front">Start</button>
         <button class="start__library btn-front">Library</button>
       </div>

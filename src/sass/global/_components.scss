@@ -185,3 +185,13 @@
     }
   }
 }
+
+.world-map {
+  display: flex;
+  align-self: center;
+  margin: -5rem 0rem 2rem 0rem;
+  width: 25rem;
+  position: relative;
+  height: 100%;
+  opacity: 0.5;
+}
