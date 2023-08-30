@@ -22,20 +22,6 @@
   position: absolute;
 }
 
-// .winner__effect {
-//   transition: opacity 1s ease-out, transform 3s cubic-bezier(0.25, 2, 0.5, 2.5) !important;
-//   opacity: 0 !important;
-//   transform: translateY(-3rem) !important;
-//   pointer-events: none;
-//   border: 3px solid rgba(128, 255, 0, 0.5) !important;
-// }
-
-// .losser__effect {
-//   transition: border 1s, translate3d(0, 0, 0) !important;
-//   border: 3px solid rgba(255, 0, 0, 0.5) !important;
-//   animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-// }
-
 @keyframes shake {
   10%,
   90% {
@@ -95,6 +81,12 @@
     border-left: 2px solid hsl(334, 68%, 40%);
     border-right: 2px solid hsl(334, 68%, 40%);
     border-radius: 1rem;
+    transition: padding 2s ease-out;
+
+    &:hover {
+      transition: padding 0.5s ease-out;
+      padding: 0rem 6rem;
+    }
   }
 
   &__hidden {
@@ -149,18 +141,20 @@
   }
 
   &__try-again {
-    background-color: #e74c3c;
+    background: hsl(0, 40%, 50%);
 
     &:hover {
-      background-color: #c0392b;
+      background: hsl(0, 40%, 45%);
+      transition: background 0.1s;
     }
   }
 
   &__home {
-    background-color: #2ecc71;
+    background: hsl(125, 30%, 50%);
 
     &:hover {
-      background-color: #27ae60;
+      background: hsl(125, 30%, 45%);
+      transition: background 0.1s;
     }
   }
 }
@@ -174,18 +168,20 @@
   }
 
   &__button {
-    background: hsl(0, 30%, 50%);
+    background: hsl(0, 40%, 50%);
 
     &:hover {
-      background: hsl(0, 30%, 30%);
+      background: hsl(0, 40%, 45%);
+      transition: background 0.1s;
     }
   }
 
   &__library {
-    background: hsl(125, 20%, 50%);
+    background: hsl(125, 30%, 50%);
 
     &:hover {
-      background: hsl(125, 20%, 30%);
+      background: hsl(125, 30%, 45%);
+      transition: background 0.1s;
     }
   }
 }

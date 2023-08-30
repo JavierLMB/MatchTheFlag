@@ -127,20 +127,3 @@
     border-bottom: 3px solid rgba(128, 255, 0);
   }
 }
-// .container .losser__effect[data-country] {
-//   transition: border 0.1s, translate3d(0, 0, 0);
-//   border: 3px solid rgba(255, 0, 0, 0.5);
-//   animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-//   &:hover {
-//     border-bottom: 3px solid rgba(255, 0, 0, 0.5);
-//   }
-// }
-
-// .container .winner__effect[data-country] {
-//   transition: opacity 1s ease-out, border 0.1s;
-//   opacity: 0;
-//   border: 3px solid rgba(128, 255, 0, 0.5);
-//   &:hover {
-//     border-bottom: 3px solid rgba(128, 255, 0, 0.5);
-//   }
-// }

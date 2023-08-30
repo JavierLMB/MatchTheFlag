@@ -207,8 +207,6 @@ export class GameView extends View {
     const nameParent = document.querySelector(".name__container");
     flagParent.innerHTML = "";
     nameParent.innerHTML = "";
-    // const counterParent = document.querySelector(".counter__count");
-    // counterParent.classList.add("hidden");
   }
 }
 
