@@ -1,5 +1,6 @@
 import View from "./View.js";
 import gameView, { GameView } from "./gameView.js";
+import worldSvg from "../../imgs/world.svg";
 
 class homeView extends GameView {
   _parentElement = document.querySelector(".score__container");
@@ -11,7 +12,7 @@ class homeView extends GameView {
 
 
       <div class="start__container">
-        <img class="world-map" src="/world.67d631da.svg">
+        <img class="world-map" src="${worldSvg}" alt="world map">
         <button class="start__button btn-front">Start</button>
         <button class="start__library btn-front">Library</button>
       </div>

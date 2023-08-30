@@ -3,22 +3,34 @@
 .heart__container {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 0.5rem;
-  padding-top: 8rem;
-  user-select: none;
+  padding-top: 7rem;
+  min-height: 15rem;
+  max-width: 15rem;
+  margin: 0 auto;
+  transition: gap 0.3s ease-in;
+
+  &:hover {
+    gap: 2rem;
+  }
+
+  &:hover img {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
 
   & img {
+    transition: width 0.1s ease-in, height 0.1s ease-in;
     width: 4rem;
     height: 4rem;
   }
 }
 
-.losser__effect--heart {
-  transition: opacity 0.5s ease-out, transform 3s cubic-bezier(0.25, 3, 0.5, 6) !important;
-  opacity: 0 !important;
+.losser__effect--heart[data-heart] {
+  transition: opacity 0.5s ease-out, transform 3s cubic-bezier(0.25, 3, 0.5, 6);
+  opacity: 0;
   transform: translateY(-3rem);
-  // transform: translateY(-3rem) !important;
-  pointer-events: none;
   position: absolute;
 }
 
@@ -165,6 +177,7 @@
     align-items: center;
     gap: 2rem;
     flex-direction: column;
+    user-select: none;
   }
 
   &__button {
@@ -194,4 +207,13 @@
   position: relative;
   height: 100%;
   opacity: 0.5;
+  user-select: none;
+  transition: transform 1s ease-in-out, opacity 0.8s;
+
+  &:hover {
+    transition: transform 2.5s ease-in, opacity 2.5s ease-in;
+
+    transform: rotate(360deg);
+    opacity: 1;
+  }
 }

@@ -48,9 +48,27 @@ class ScoreView extends GameView {
 
   _setRenderTitle(score) {
     const title = document.querySelector(".container__main--title");
-    title.textContent =
-      score.win < 5 ? "Better luck next time!" : "Awesome job!";
+    if (score.finalWins <= 3) title.textContent = "Better luck next time!";
+    if (score.finalWins > 3 && score.win <= 5)
+      title.textContent = "Doing great!";
+    if (score.finalWins > 5 && score.win <= 8) title.textContent = "Good job!";
+    if (score.finalWins > 8 && score.win <= 10)
+      title.textContent = "Great job!";
+    if (score.finalWins > 10 && score.win <= 12)
+      title.textContent = "Awesome job!";
+    if (score.finalWins > 12 && score.win <= 15)
+      title.textContent = "Excellent job!";
+    if (score.finalWins > 15 && score.win <= 17)
+      title.textContent = "Fantastic job!";
+    if (score.finalWins > 17 && score.win <= 20)
+      title.textContent = "Impressive!";
+    if (score.finalWins > 20 && score.win <= 25)
+      title.textContent = "Unbelievable!";
+    if (score.finalWins > 25 && score.win <= 30)
+      title.textContent = "Incredible!";
   }
 }
 
 export default new ScoreView();
+// title.textContent =
+//   score.win < 5 ? "Better luck next time!" : "Awesome job!";

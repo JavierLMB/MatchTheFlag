@@ -20,8 +20,6 @@ $bp-smallest: 31.25em; // 500px
 $border-radius: 1.2rem;
 
 // Shadows
-// $shadow-glass: 0 0px 40px 5px rgba(0, 0, 0, 0.2);
-// $shadow-glass: 0 0px 25px 0px hsla(0, 0%, 40%, 0.2);
 $shadow-glass: 0 0px 25px 5px hsl(334, 68%, 40%);
 $shadow-country: 0px 0px 15px -5px rgba(0, 0, 0, 0.9);
 
@@ -54,6 +52,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  user-select: none;
 }
 
 h1 {
