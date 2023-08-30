@@ -40,11 +40,11 @@
     position: relative;
     background: hsl(0, 0%, 8%);
     padding: 2rem;
-    border-bottom: 2px solid hsl(334, 68%, 40%, 0);
+    border-bottom: 3px solid hsl(334, 68%, 40%, 0);
     transition: border-bottom 0.5s;
 
     &:hover {
-      border-bottom: 2px solid hsl(334, 100%, 60%);
+      border-bottom: 3px solid hsl(334, 100%, 60%);
     }
   }
 
@@ -54,22 +54,20 @@
 
     &:hover img {
       transition: border-radius 0.5s;
-      // transform: translateY(-10px);
       border-radius: 0rem;
     }
-    img {
-      object-fit: cover;
-      width: 100%;
-      height: 100%;
-      filter: brightness(1.2);
-      will-change: transform;
-      transition: transform 450ms;
-      box-shadow: $shadow-country;
-      border-radius: 1.5rem;
-      transition: border-radius 0.5s, border 0.5s;
-      // transition: border-radius 0.5s, border 0.5s !important;
-      border: 3px solid hsl(334, 100%, 60%, 0);
-    }
+  }
+
+  &__country {
+    opacity: 1;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    filter: brightness(1.2);
+    box-shadow: $shadow-country;
+    border: 3px solid hsl(334, 100%, 60%, 0);
+    border-radius: 1.5rem;
+    transition: border-radius 0.5s, border 0.5s, opacity 1s ease-out;
   }
 }
 
@@ -91,19 +89,12 @@
     padding: 1rem 2rem;
     font-weight: 400;
     text-align: center;
-    display: grid;
-    place-items: center;
-    will-change: transform;
-    transition: transform 450ms;
     background: hsl(0, 0%, 8%);
     color: hsl(0, 0%, 100%);
     border: 3px solid hsl(334, 100%, 60%, 0);
-
     border-bottom: 3px solid hsl(334, 68%, 40%);
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
+    border-radius: 1rem 1rem 0 0;
     transition: border-radius 0.5s, border 0.5s;
-    // transition: border-radius 0.5s, border 0.5s !important;
 
     &--container {
       &:hover .name__country {
@@ -119,23 +110,37 @@
   border-radius: 0rem;
 }
 
-.winner__effect[data-country] {
-  transition: opacity 1s ease-out, border 0.1s;
-  opacity: 0;
-  pointer-events: none;
-  border: 3px solid rgba(128, 255, 0, 0.5);
-  &:hover {
-    border-bottom: 3px solid rgba(128, 255, 0, 0.5);
-  }
-}
-
-// Fix for tmr
-
-.losser__effect[data-country] {
+.container .losser__effect[data-country] {
   transition: border 0.1s, translate3d(0, 0, 0);
-  border: 3px solid rgba(255, 0, 0, 0.5);
+  border: 3px solid hsla(0, 100%, 50%);
   animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
   &:hover {
-    border-bottom: 3px solid rgba(255, 0, 0, 0.5);
+    border-bottom: 3px solid rgba(255, 0, 0);
   }
 }
+
+.container .winner__effect[data-country] {
+  transition: opacity 1s ease-out, border 0.1s;
+  opacity: 0;
+  border: 3px solid rgba(128, 255, 0);
+  &:hover {
+    border-bottom: 3px solid rgba(128, 255, 0);
+  }
+}
+// .container .losser__effect[data-country] {
+//   transition: border 0.1s, translate3d(0, 0, 0);
+//   border: 3px solid rgba(255, 0, 0, 0.5);
+//   animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+//   &:hover {
+//     border-bottom: 3px solid rgba(255, 0, 0, 0.5);
+//   }
+// }
+
+// .container .winner__effect[data-country] {
+//   transition: opacity 1s ease-out, border 0.1s;
+//   opacity: 0;
+//   border: 3px solid rgba(128, 255, 0, 0.5);
+//   &:hover {
+//     border-bottom: 3px solid rgba(128, 255, 0, 0.5);
+//   }
+// }

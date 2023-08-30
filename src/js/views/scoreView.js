@@ -30,11 +30,17 @@ class ScoreView extends GameView {
     return markup;
   }
 
+  _clearCounter() {
+    const counterParent = document.querySelector(".counter__count");
+    counterParent.classList.add("hidden");
+  }
+
   renderScore(score) {
     if (score.loss !== 3) return;
 
     setTimeout(() => {
       this._clearFlagName();
+      this._clearCounter();
       this._setRenderTitle(score);
       this.render(score);
     }, 1000);

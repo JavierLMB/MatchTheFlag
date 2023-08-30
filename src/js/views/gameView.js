@@ -89,8 +89,8 @@ export class GameView extends View {
     hearts.forEach((heart) => heart.classList.add("losser__effect--heart"));
     const heartsContainer = document.querySelector(".heart__container");
     heartsContainer.classList.add("hidden");
-    const winCounter = document.querySelector(".counter__count");
-    winCounter.classList.add("hidden");
+    // const winCounter = document.querySelector(".counter__count");
+    // winCounter.classList.add("hidden");
   }
 
   addHandlerGame(handler) {
@@ -152,8 +152,9 @@ export class GameView extends View {
   _winCondition(state) {
     if (state.result !== "win") return;
     const matchedCountry = this._findHTMLCountry(state);
-    matchedCountry.classList.add("winner__effect");
     matchedCountry.classList.remove("select--active");
+    matchedCountry.classList.add("winner__effect");
+
     console.log(matchedCountry);
 
     this._score.finalWins++;
@@ -204,10 +205,10 @@ export class GameView extends View {
   _clearFlagName() {
     const flagParent = document.querySelector(".flag__container");
     const nameParent = document.querySelector(".name__container");
-    const counterParent = document.querySelector(".counter__count");
     flagParent.innerHTML = "";
     nameParent.innerHTML = "";
-    counterParent.classList.add("hidden");
+    // const counterParent = document.querySelector(".counter__count");
+    // counterParent.classList.add("hidden");
   }
 }
 

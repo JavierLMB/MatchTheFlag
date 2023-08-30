@@ -14,7 +14,7 @@ class FlagView extends GameView {
           (data) => `
           <div class="flag__image--container">
            <figure class="flag__image">
-            <img data-country="${data.name}" src="${data.image}"/>
+            <img class="flag__country" data-country="${data.name}" src="${data.image}"/>
            </figure>
           </div>
         `

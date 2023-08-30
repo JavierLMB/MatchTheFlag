@@ -5,6 +5,8 @@
   justify-content: center;
   gap: 0.5rem;
   padding-top: 8rem;
+  user-select: none;
+
   & img {
     width: 4rem;
     height: 4rem;
@@ -82,6 +84,7 @@
   &__container {
     display: flex;
     justify-content: center;
+    user-select: none;
   }
 
   &__count {
