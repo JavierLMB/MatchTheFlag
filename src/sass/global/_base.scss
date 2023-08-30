@@ -1,27 +1,56 @@
 // Colors
 $color-primary: hsl(334, 68%, 40%);
-$color-grad-1: #fbdb89;
-$color-grad-2: #f48982;
+$color-primary-light: hsl(334, 100%, 60%);
+$color-primary-light-2: hsl(334, 100%, 80%);
+$color-accent-light: hsl(0, 0%, 15%);
+$color-accent-dark: hsl(0, 0%, 8%);
+$color-hidden: hsl(334, 68%, 40%, 0);
 
-$color-grey-light-1: #f9f5f3; // Light background
-$color-grey-light-2: #f2efee; // Light lines
-$color-grey-light-3: #d3c7c3; // Light text (placeholder)
-$color-grey-dark-1: #615551; // Normal text
-$color-grey-dark-2: #918581; // Lighter text
+$color-button-primary: hsl(125, 30%, 50%);
+$color-button-primary-dark: hsl(125, 30%, 45%);
 
-$gradient: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+$color-button-secondary: hsl(0, 40%, 50%);
+$color-button-secondary-dark: hsl(0, 40%, 45%);
 
-$bp-large: 78.15em; // 1250px
-$bp-medium: 61.25em; // 980px
-$bp-small: 37.5em; // 600px
-$bp-smallest: 31.25em; // 500px
+$main-text-color: hsl(0, 0%, 100%);
 
-// Radius
-$border-radius: 1.2rem;
+$winner-effect: hsl(90, 100%, 50%);
+$losser-effect: hsla(0, 100%, 50%);
+
+// Fonts
+$main-title-font: clamp(2.5rem, 5vw, 3rem);
+$font-big: clamp(3rem, 7vw, 5rem);
+$font-medium: clamp(1.8rem, 4vw, 3rem);
+$font-medium-small: clamp(1.5rem, 3vw, 2.5rem);
+$font-medium-smaller: clamp(1.4rem, 2.5vw, 2rem);
 
 // Shadows
-$shadow-glass: 0 0px 25px 5px hsl(334, 68%, 40%);
-$shadow-country: 0px 0px 15px -5px rgba(0, 0, 0, 0.9);
+$shadow-glass: 0 0px 25px 5px $color-primary;
+
+// Spacing
+$spacing-3xl-min: 1rem;
+$spacing-3xl-preferred: calc(0.5rem + 3.5vw);
+$spacing-3xl-max: 2.5rem;
+
+$spacing-xl-min: 0.75rem;
+$spacing-xl-preferred: calc(0.25rem + 2vw);
+$spacing-xl-max: 1.5rem;
+
+$spacing-lg-min: 0.5rem;
+$spacing-lg-preferred: calc(0.15rem + 1.5vw);
+$spacing-lg-max: 1rem;
+
+$spacing-md-min: 0.25rem;
+$spacing-md-preferred: calc(0.1rem + 1vw);
+$spacing-md-max: 0.75rem;
+
+$spacing-sm-min: 0.15rem;
+$spacing-sm-preferred: calc(0.05rem + 0.5vw);
+$spacing-sm-max: 0.5rem;
+
+$spacing-xs-min: 0.1rem;
+$spacing-xs-preferred: calc(0.03rem + 0.25vw);
+$spacing-xs-max: 0.25rem;
 
 * {
   margin: 0;
@@ -45,7 +74,7 @@ body {
   line-height: 1.6;
   color: hsl(0, 0%, 100%);
   background: url(../imgs/blob-scene-haikei.svg);
-  // background: hsl(0, 0%, 8%);
+  // background: $color-accent-dark;
   background-size: cover;
   background-repeat: no-repeat;
   min-height: calc(100vh - 2 * 4vw);
@@ -53,9 +82,4 @@ body {
   justify-content: center;
   align-items: center;
   user-select: none;
-}
-
-h1 {
-  font-weight: 600;
-  font-size: 15rem;
 }

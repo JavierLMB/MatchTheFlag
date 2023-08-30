@@ -63,8 +63,8 @@
   cursor: pointer;
   border-radius: 0.5rem;
   padding: 1.5rem 5rem;
-  font-size: 3rem;
-  color: white;
+  font-size: $font-medium-small;
+  color: $main-text-color;
 
   &:hover {
     background: none;
@@ -86,12 +86,12 @@
   }
 
   &__count {
-    font-size: 5rem;
-    background: hsl(0, 0%, 8%);
-    color: hsl(0, 0%, 100%);
+    font-size: $font-big;
+    background: $color-accent-dark;
+    color: $main-text-color;
     padding: 0rem 2rem;
-    border-left: 2px solid hsl(334, 68%, 40%);
-    border-right: 2px solid hsl(334, 68%, 40%);
+    border-left: 2px solid $color-primary;
+    border-right: 2px solid $color-primary;
     border-radius: 1rem;
     transition: padding 2s ease-out;
 
@@ -117,7 +117,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      font-size: 5rem;
+      $font-big: 5rem;
       gap: 2rem;
     }
 
@@ -132,40 +132,41 @@
 
   &__outcome--container {
     display: flex;
-    font-size: 5rem;
+    margin-top: -15rem;
+    font-size: $font-big;
     gap: 2rem;
   }
 
   &__highscore {
-    font-size: 2rem;
+    font-size: $font-medium-smaller;
   }
 
   &__button {
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: $font-medium-smaller;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     text-align: center;
     text-decoration: none;
     transition: background-color 0.3s ease;
-    color: white;
+    color: $main-text-color;
   }
 
   &__try-again {
-    background: hsl(0, 40%, 50%);
+    background: $color-button-secondary;
 
     &:hover {
-      background: hsl(0, 40%, 45%);
+      background: $color-button-secondary-dark;
       transition: background 0.1s;
     }
   }
 
   &__home {
-    background: hsl(125, 30%, 50%);
+    background: $color-button-primary;
 
     &:hover {
-      background: hsl(125, 30%, 45%);
+      background: $color-button-primary-dark;
       transition: background 0.1s;
     }
   }
@@ -181,19 +182,19 @@
   }
 
   &__button {
-    background: hsl(0, 40%, 50%);
+    background: $color-button-secondary;
 
     &:hover {
-      background: hsl(0, 40%, 45%);
+      background: $color-button-secondary-dark;
       transition: background 0.1s;
     }
   }
 
   &__library {
-    background: hsl(125, 30%, 50%);
+    background: $color-button-primary;
 
     &:hover {
-      background: hsl(125, 30%, 45%);
+      background: $color-button-primary-dark;
       transition: background 0.1s;
     }
   }
@@ -209,6 +210,7 @@
   opacity: 0.5;
   user-select: none;
   transition: transform 1s ease-in-out, opacity 0.8s;
+  z-index: -1;
 
   &:hover {
     transition: transform 2.5s ease-in, opacity 2.5s ease-in;
