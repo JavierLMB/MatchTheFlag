@@ -1,4 +1,4 @@
-// Colors
+////// Colors
 $color-primary: hsl(334, 68%, 40%);
 $color-primary-light: hsl(334, 100%, 60%);
 $color-primary-light-2: hsl(334, 100%, 80%);
@@ -17,40 +17,52 @@ $main-text-color: hsl(0, 0%, 100%);
 $winner-effect: hsl(90, 100%, 50%);
 $losser-effect: hsla(0, 100%, 50%);
 
-// Fonts
+////// Fonts
 $main-title-font: clamp(2.5rem, 5vw, 3rem);
 $font-big: clamp(3rem, 7vw, 5rem);
 $font-medium: clamp(1.8rem, 4vw, 3rem);
 $font-medium-small: clamp(1.5rem, 3vw, 2.5rem);
 $font-medium-smaller: clamp(1.4rem, 2.5vw, 2rem);
 
-// Shadows
+////// Shadows
 $shadow-glass: 0 0px 25px 5px $color-primary;
 
-// Spacing
+////// Spacing
 $spacing-3xl-min: 1rem;
-$spacing-3xl-preferred: calc(0.5rem + 3.5vw);
+$spacing-3xl-preferred: clamp(6.75rem, calc(6.6rem + 0.75vw), 7.5rem);
 $spacing-3xl-max: 2.5rem;
 
 $spacing-xl-min: 0.75rem;
-$spacing-xl-preferred: calc(0.25rem + 2vw);
+$spacing-xl-preferred: clamp(3.38rem, calc(3.3rem + 0.38vw), 3.75rem);
 $spacing-xl-max: 1.5rem;
 
 $spacing-lg-min: 0.5rem;
-$spacing-lg-preferred: calc(0.15rem + 1.5vw);
+$spacing-lg-preferred: clamp(2.25rem, calc(2.2rem + 0.25vw), 2.5rem);
 $spacing-lg-max: 1rem;
 
 $spacing-md-min: 0.25rem;
-$spacing-md-preferred: calc(0.1rem + 1vw);
+$spacing-md-preferred: clamp(1.69rem, calc(1.65rem + 0.19vw), 1.88rem);
 $spacing-md-max: 0.75rem;
 
 $spacing-sm-min: 0.15rem;
-$spacing-sm-preferred: calc(0.05rem + 0.5vw);
+$spacing-sm-preferred: clamp(1.13rem, calc(1.1rem + 0.13vw), 1.25rem);
 $spacing-sm-max: 0.5rem;
 
 $spacing-xs-min: 0.1rem;
-$spacing-xs-preferred: calc(0.03rem + 0.25vw);
+$spacing-xs-preferred: clamp(0.88rem, calc(0.86rem + 0.06vw), 0.94rem);
 $spacing-xs-max: 0.25rem;
+
+////// RESPONSIVE BREAKPOINTS
+$bp-largest: 111em; // 1776px
+$bp-large: 96em; // 1526px
+$bp-padding: 76em; // 1216px
+$bp-normal: 69em; // 1104px
+$bp-normals: 60em; // 960px
+$bp-small: 45em; // 720px
+$bp-smaller: 35em; // 560px
+$bp-smallest: 23.6em; // 377.6px
+
+//////
 
 * {
   margin: 0;
@@ -66,6 +78,11 @@ $spacing-xs-max: 0.25rem;
 html {
   box-sizing: border-box;
   font-size: 62.5%;
+  overflow-x: hidden;
+
+  @media only screen and (max-width: $bp-largest) {
+    font-size: 50%;
+  }
 }
 
 body {

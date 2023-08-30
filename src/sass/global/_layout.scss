@@ -1,5 +1,5 @@
 @use "_base" as *;
-
+/////////////////////////////////// Fix height issue
 .container {
   display: flex;
   flex-direction: column;
@@ -22,6 +22,10 @@
   gap: $spacing-sm-preferred;
   z-index: 1;
   margin: 1rem;
+
+  @media only screen and (max-width: $bp-small) {
+    padding: 2rem;
+  }
 
   &__main--title {
     font-size: $font-medium;
@@ -53,12 +57,17 @@
     max-width: 30rem;
     position: relative;
     background: $color-accent-dark;
-    // flex: 1 1 calc(50% - #{$spacing-md-preferred / 2});
+    flex: 1 1 calc(50% - #{$spacing-md-preferred / 2});
     // padding: 2rem;
     // border-bottom: 3px solid $color-hidden;
     padding: $spacing-3xl-max;
     border-bottom: $spacing-sm-max solid $color-hidden;
     transition: border-bottom 0.5s;
+
+    @media only screen and (max-width: $bp-smaller) {
+      padding: 0.5rem;
+      flex: 1 1 calc(50% - #{$spacing-md-preferred / 2});
+    }
 
     &:hover {
       // border-bottom: 3px solid $color-primary-light;
@@ -154,29 +163,29 @@
   }
 }
 
-@media screen and (max-width: 800px) {
-  .container {
-    height: 90%;
-  }
+// @media screen and (max-width: 800px) {
+//   .container {
+//     height: 100%;
+//     margin: 0;
+//   }
 
-  .flag__container--inner {
-  }
+//   .flag__container--inner {
+//   }
 
-  .flag__image--container {
-    padding: 1rem;
-    max-width: 45%;
-    // max-width: 45%;
-  }
+//   .flag__image--container {
+//     padding: 1rem;
+//     max-width: 45%;
+//   }
 
-  .flag__image {
-    width: 100%;
+//   .flag__image {
+//     width: 100%;
 
-    & img {
-      // width: 50%;
-    }
-  }
+//     & img {
+//       // width: 50%;
+//     }
+//   }
 
-  .name__country {
-    font-size: 5rem;
-  }
-}
+//   .name__country {
+//     font-size: 5rem;
+//   }
+// }
