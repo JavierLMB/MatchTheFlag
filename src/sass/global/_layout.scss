@@ -21,10 +21,14 @@
   padding: $spacing-3xl-preferred;
   gap: $spacing-sm-preferred;
   z-index: 1;
-  margin: 1rem;
+  // margin: 1rem;
 
   @media only screen and (max-width: $bp-small) {
     padding: 2rem;
+  }
+
+  @media only screen and (max-height: $bp-small) {
+    padding: 10rem;
   }
 
   &__main--title {
