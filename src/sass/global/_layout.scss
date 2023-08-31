@@ -1,27 +1,19 @@
 @use "_base" as *;
-/////////////////////////////////// Fix height issue
+
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
   width: clamp(auto, 65vw, 80vw);
-  // width: auto;
-  // width: clamp(200px, 65vw, 80vw);
-  // width: min(95vw, 65vw);
-  // margin: 4vh auto;
   overflow: hidden;
-  // padding: 4rem 5rem 4rem 5rem;
   background: $color-accent-light;
   border-radius: 2rem;
   border: 2px solid $color-primary-light-2;
   box-shadow: $shadow-glass;
-  // gap: 1rem;
   margin: $spacing-md-preferred auto;
   padding: $spacing-3xl-preferred;
   gap: $spacing-sm-preferred;
-  z-index: 1;
-  // margin: 1rem;
 
   @media only screen and (max-width: $bp-small) {
     padding: 2rem;
@@ -34,7 +26,6 @@
   &__main--title {
     font-size: $font-medium;
     text-align: center;
-    // padding-bottom: 5rem;
     padding-bottom: $spacing-xl-preferred;
   }
 }
@@ -48,8 +39,6 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    // gap: 4rem;
-    // padding-bottom: 10rem;
     gap: $spacing-md-preferred;
     padding-bottom: $spacing-3xl-preferred;
     user-select: none;
@@ -62,8 +51,6 @@
     position: relative;
     background: $color-accent-dark;
     flex: 1 1 calc(50% - #{$spacing-md-preferred / 2});
-    // padding: 2rem;
-    // border-bottom: 3px solid $color-hidden;
     padding: $spacing-3xl-max;
     border-bottom: $spacing-sm-max solid $color-hidden;
     transition: border-bottom 0.5s;
@@ -74,7 +61,6 @@
     }
 
     &:hover {
-      // border-bottom: 3px solid $color-primary-light;
       border-bottom: $spacing-sm-max solid $color-primary-light;
     }
   }
@@ -108,10 +94,8 @@
   }
   &__container--inner {
     display: flex;
-    // justify-content: space-around;
     justify-content: center;
     align-items: stretch;
-    // gap: 1rem;
     gap: $spacing-md-preferred;
     width: 100%;
     user-select: none;
@@ -120,14 +104,10 @@
   }
   &__country {
     font-size: $font-medium-small;
-    // padding: 1rem 2rem;
     font-weight: 400;
     text-align: center;
     background: $color-accent-dark;
     color: $main-text-color;
-    // border: 3px solid $color-hidden;
-    // border-bottom: 3px solid $color-primary;
-    // border-radius: 1rem 1rem 0 0;
     transition: border-radius 0.5s, border 0.5s;
     padding: $spacing-md-preferred $spacing-lg-preferred;
     border: $spacing-sm-max solid $color-hidden;
@@ -136,7 +116,6 @@
 
     &--container {
       &:hover .name__country {
-        // border-bottom: 3px solid $color-primary-light;
         border-bottom: $spacing-sm-max solid $color-primary-light;
       }
     }

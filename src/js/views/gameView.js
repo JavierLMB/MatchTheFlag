@@ -25,7 +25,6 @@ export class GameView extends View {
           countryName !== activeElementCountry + this._suffix
         )
           return;
-        // console.log(this._score, "✅");
 
         this._highScore();
         this._lossLimit();
@@ -89,8 +88,6 @@ export class GameView extends View {
     hearts.forEach((heart) => heart.classList.add("losser__effect--heart"));
     const heartsContainer = document.querySelector(".heart__container");
     heartsContainer.classList.add("hidden");
-    // const winCounter = document.querySelector(".counter__count");
-    // winCounter.classList.add("hidden");
   }
 
   addHandlerGame(handler) {
@@ -191,7 +188,6 @@ export class GameView extends View {
   _scoreTrack(state) {
     state.score.win = this._score.win;
     state.score.loss = this._score.loss;
-    // console.log(state.score);
   }
 
   _generateMore(score, handler, resetGame) {

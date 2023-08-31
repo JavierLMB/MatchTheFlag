@@ -228,13 +228,10 @@
   position: relative;
   height: 100%;
   opacity: 0.5;
-  user-select: none;
   transition: transform 1s ease-in-out, opacity 0.8s;
-  z-index: -1;
 
   &:hover {
     transition: transform 2.5s ease-in, opacity 2.5s ease-in;
-
     transform: rotate(360deg);
     opacity: 1;
   }

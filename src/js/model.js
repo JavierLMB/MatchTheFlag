@@ -7,6 +7,40 @@ export const state = {
   score: [],
 };
 
+const library = {
+  countries: [],
+};
+
+const createLibraryObject = function (arrData) {
+  return {
+    name: arrData.name.common,
+    image: arrData.flags.svg,
+    capital: arrData.capital,
+    continent: arrData.continents,
+    population: arrData.population,
+  };
+};
+
+export const loadLibraryData = async function () {
+  try {
+    const data = await AJAX(`${API_URL}`);
+    console.log(data);
+    console.log(data.length);
+    const malta = data.find((country) => country.name.common === "Malta");
+    console.log(malta);
+    data.forEach((country) => {
+      const LibraryObject = createLibraryObject(country);
+      library.countries.push(LibraryObject);
+    });
+  } catch (err) {
+    console.log(err);
+    throw err;
+  }
+};
+
+loadLibraryData();
+console.log(library.countries);
+
 const createCountryObject = function (arrData) {
   return {
     name: arrData.name.common,

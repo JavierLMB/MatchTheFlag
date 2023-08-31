@@ -23,6 +23,14 @@ const controlGame = async function () {
   }
 };
 
+// const controlLibrary = function (goToPage) {
+//   try {
+//     await model.loadLibraryData();
+//   } catch (err) {
+//     console.log(err);
+//   }
+// };
+
 const controlMatch = function (countryName, score) {
   model.matchGame(countryName);
   flagView.matchCondition(model.state);
@@ -47,13 +55,6 @@ const controlHome = function () {
   scoreView._clear();
   homeView.renderHome();
 };
-
-// const controlLibrary = function (goToPage) {
-//   // 1) Render NEW results
-//   resultsView.render(model.getSearchResutlsPage(goToPage));
-//   // 2) Render NEW pagination buttons
-//   paginationView.render(model.state.search);
-// };
 
 const init = function () {
   flagView.addHandlerClick(controlMatch);
