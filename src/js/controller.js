@@ -10,6 +10,7 @@ import lifeView from "./views/lifeView.js";
 import startView from "./views/startView.js";
 import counterView from "./views/counterView.js";
 import homeView from "./views/homeView.js";
+import libraryView from "./views/libraryView.js";
 
 //////////////////////////////////////
 
@@ -23,13 +24,13 @@ const controlGame = async function () {
   }
 };
 
-// const controlLibrary = function (goToPage) {
-//   try {
-//     await model.loadLibraryData();
-//   } catch (err) {
-//     console.log(err);
-//   }
-// };
+const controlLibrary = function (goToPage) {
+  // try {
+  //   await model.loadLibraryData();
+  // } catch (err) {
+  //   console.log(err);
+  // }
+};
 
 const controlMatch = function (countryName, score) {
   model.matchGame(countryName);
@@ -63,6 +64,7 @@ const init = function () {
   scoreView.addHandlerGame(controlReMatch);
   startView.addHandlerGame(controlReMatch);
   homeView.addHandlerHome(controlHome);
+  libraryView.addHandlerLibrary(controlLibrary);
   gameView._highScoreGlobal();
 };
 init();
