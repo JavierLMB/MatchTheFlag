@@ -23,9 +23,10 @@ class LibraryView extends GameView {
   }
 
   _generateMarkup() {
-    const markup = this._data
-      .map(
-        (data) => `
+    const markup =
+      this._data
+        .map(
+          (data) => `
         
         <div class="library__container--inner">
           <img class="library__flag" src="${data.image}"/>
@@ -36,8 +37,14 @@ class LibraryView extends GameView {
         </div>
 
      `
-      )
-      .join("");
+        )
+        .join("") +
+      `
+      <div class="library__container--button">
+        <button class="library__previous library__btn btn-front">Previous</button>
+        <button class="library__next library__btn btn-front">Next</button>
+      </div>
+      `;
     return markup;
   }
 

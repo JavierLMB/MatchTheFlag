@@ -163,7 +163,21 @@
       max-width: 50rem;
       height: auto;
     }
+    &--button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      user-select: none;
+    }
   }
+
+  &__btn {
+    width: 20rem;
+    text-align: center;
+    color: black;
+  }
+
   &__flag {
     max-width: 10rem;
     object-fit: cover;
