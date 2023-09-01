@@ -146,13 +146,26 @@
   }
 }
 
-.library__container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: $color-accent-light;
-  width: 90vw;
-  height: 80vh;
-  z-index: 2;
+.library {
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: $color-accent-light;
+    width: 90vw;
+    height: 80vh;
+    z-index: 2;
+    padding: 2rem;
+    &--inner {
+      max-width: 50rem;
+      height: auto;
+    }
+  }
+  &__flag {
+    max-width: 10rem;
+    object-fit: cover;
+  }
 }

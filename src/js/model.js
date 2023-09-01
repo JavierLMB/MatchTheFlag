@@ -1,5 +1,5 @@
 import { AJAX, getRandomUniqueInt, fullName } from "./helpers.js";
-import { API_URL, MATCHING_LIMITS } from "./config.js";
+import { API_URL, MATCHING_LIMITS, RES_PER_PAGE } from "./config.js";
 
 export const state = {
   countries: [],
@@ -7,8 +7,10 @@ export const state = {
   score: [],
 };
 
-const library = {
+export const library = {
   countries: [],
+  page: 1,
+  resultsPerPage: RES_PER_PAGE,
 };
 
 const createLibraryObject = function (arrData) {
@@ -24,22 +26,26 @@ const createLibraryObject = function (arrData) {
 export const loadLibraryData = async function () {
   try {
     const data = await AJAX(`${API_URL}`);
-    console.log(data);
-    console.log(data.length);
-    const malta = data.find((country) => country.name.common === "Malta");
-    console.log(malta);
+
     data.forEach((country) => {
       const LibraryObject = createLibraryObject(country);
       library.countries.push(LibraryObject);
     });
+    library.page = 1;
   } catch (err) {
     console.log(err);
     throw err;
   }
 };
 
-loadLibraryData();
-console.log(library.countries);
+export const getLibraryPage = function (page = library.page) {
+  library.page = page;
+
+  const start = (page - 1) * library.resultsPerPage;
+  const end = page * library.resultsPerPage;
+
+  return library.countries.slice(start, end);
+};
 
 const createCountryObject = function (arrData) {
   return {

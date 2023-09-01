@@ -27,6 +27,8 @@ const controlGame = async function () {
 const controlLibrary = async function (goToPage) {
   try {
     await model.loadLibraryData();
+    libraryView.render(model.getLibraryPage());
+    // console.log(model.getLibraryPage());
   } catch (err) {
     console.log(err);
   }
