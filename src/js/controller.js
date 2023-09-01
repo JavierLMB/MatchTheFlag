@@ -24,12 +24,12 @@ const controlGame = async function () {
   }
 };
 
-const controlLibrary = function (goToPage) {
-  // try {
-  //   await model.loadLibraryData();
-  // } catch (err) {
-  //   console.log(err);
-  // }
+const controlLibrary = async function (goToPage) {
+  try {
+    await model.loadLibraryData();
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 const controlMatch = function (countryName, score) {
