@@ -24,10 +24,10 @@ const controlGame = async function () {
   }
 };
 
-const controlLibrary = async function (goToPage) {
+const controlLibrary = async function (page) {
   try {
     await model.loadLibraryData();
-    libraryView.render(model.getLibraryPage());
+    libraryView.render(model.getLibraryPage(page));
     // console.log(model.getLibraryPage());
   } catch (err) {
     console.log(err);
@@ -67,6 +67,7 @@ const init = function () {
   startView.addHandlerGame(controlReMatch);
   homeView.addHandlerHome(controlHome);
   libraryView.addHandlerLibrary(controlLibrary);
+  libraryView.addHandlerPagination(controlLibrary);
   gameView._highScoreGlobal();
 };
 init();

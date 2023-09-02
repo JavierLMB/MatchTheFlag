@@ -3,7 +3,8 @@ import gameView, { GameView } from "./gameView.js";
 
 class LibraryView extends GameView {
   _parentElement = document.querySelector(".library__container");
-  _mainContainer = document.querySelector(".container");
+  _mainContainer = document.querySelector(".start__container");
+  _page = 1;
 
   addHandlerLibrary(handler) {
     this._mainContainer.addEventListener(
@@ -14,10 +15,22 @@ class LibraryView extends GameView {
 
         this._parentElement.classList.remove("hidden");
 
-        const goToPage = +btn.dataset.goto;
+        handler();
+      }.bind(this)
+    );
+  }
 
-        // const goToPage = +btn.dataset.goto;
-        handler(goToPage);
+  addHandlerPagination(handler) {
+    this._parentElement.addEventListener(
+      "click",
+      function (e) {
+        const btn = e.target.closest(`.library__btn`);
+        console.log(btn);
+        if (!btn) return;
+        if (btn.classList.contains("library__previous")) this._page--;
+        if (btn.classList.contains("library__next")) this._page++;
+        console.log(this._page);
+        handler(this._page);
       }.bind(this)
     );
   }
