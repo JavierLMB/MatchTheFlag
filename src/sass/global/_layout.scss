@@ -148,8 +148,9 @@
 
 .library {
   &__container {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     position: absolute;
     top: 50%;
     left: 50%;
@@ -160,8 +161,19 @@
     z-index: 2;
     padding: 2rem;
     &--inner {
-      max-width: 50rem;
-      height: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 106%;
+      width: 100%;
+      background: $color-accent-dark;
+      overflow: hidden;
+      border-radius: 0.5rem;
+      background-size: cover;
+      background-repeat: no-repeat;
+      font-size: $font-medium-smaller;
+      font-weight: 300;
     }
     &--button {
       display: flex;
@@ -176,10 +188,17 @@
     width: 20rem;
     text-align: center;
     color: black;
+    position: absolute;
+    top: -100;
   }
 
   &__flag {
     max-width: 10rem;
     object-fit: cover;
+  }
+  &__name {
+    font-size: $font-medium-small;
+    font-weight: 400;
+    text-align: center;
   }
 }
