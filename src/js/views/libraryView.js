@@ -36,28 +36,23 @@ class LibraryView extends GameView {
   }
 
   _generateMarkup() {
-    const markup =
-      this._data
-        .map(
-          (data) => `
+    const markup = this._data
+      .map(
+        (data) => `
         
         <div class="library__container--inner">
+        <div class="library__container--details">
           <img class="library__flag" src="${data.image}"/>
           <div class="library__name">${data.name}</div> 
           <div class="library__capital">${data.capital}</div> 
           <div class="library__continent">${data.continent}</div> 
           <div class="library__population">${data.population}</div> 
         </div>
+        </div>
 
      `
-        )
-        .join("") +
-      `
-      <div class="library__container--button">
-        <button class="library__previous library__btn btn-front">Previous</button>
-        <button class="library__next library__btn btn-front">Next</button>
-      </div>
-      `;
+      )
+      .join("");
     return markup;
   }
 

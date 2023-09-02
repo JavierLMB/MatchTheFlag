@@ -9,8 +9,6 @@ export const state = {
 
 export const library = {
   countries: [],
-  page: 1,
-  resultsPerPage: RES_PER_PAGE,
 };
 
 const createLibraryObject = function (arrData) {
@@ -31,20 +29,10 @@ export const loadLibraryData = async function () {
       const LibraryObject = createLibraryObject(country);
       library.countries.push(LibraryObject);
     });
-    library.page = 1;
   } catch (err) {
     console.log(err);
     throw err;
   }
-};
-
-export const getLibraryPage = function (page = library.page) {
-  library.page = page;
-
-  const start = (page - 1) * library.resultsPerPage;
-  const end = page * library.resultsPerPage;
-
-  return library.countries.slice(start, end);
 };
 
 const createCountryObject = function (arrData) {

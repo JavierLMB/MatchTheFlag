@@ -148,9 +148,7 @@
 
 .library {
   &__container {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    overflow: auto;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -159,28 +157,29 @@
     width: 90vw;
     height: 80vh;
     z-index: 2;
-    padding: 2rem;
     &--inner {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 106%;
-      width: 100%;
+      margin: $spacing-xl-preferred;
+      margin-left: 0rem;
+      margin-right: 0rem;
       background: $color-accent-dark;
       overflow: hidden;
       border-radius: 0.5rem;
-      background-size: cover;
-      background-repeat: no-repeat;
+      padding: $spacing-3xl-preferred;
       font-size: $font-medium-smaller;
       font-weight: 300;
     }
-    &--button {
+    &--details {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      gap: 2rem;
-      user-select: none;
+      background: $color-accent-light;
+      border-radius: 1rem;
+      min-height: 56rem;
+      padding: 4rem;
     }
   }
 
@@ -193,12 +192,14 @@
   }
 
   &__flag {
-    max-width: 10rem;
+    max-width: 30rem;
     object-fit: cover;
+    border-radius: 1.5rem;
   }
   &__name {
     font-size: $font-medium-small;
     font-weight: 400;
-    text-align: center;
+    padding: 0.5rem;
+    // text-align: center;
   }
 }
