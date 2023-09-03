@@ -1,5 +1,8 @@
 import View from "./View.js";
 import gameView, { GameView } from "./gameView.js";
+import crown from "../../imgs/crown-svgrepo-com.svg";
+import globe from "../../imgs/globe-svgrepo-com.svg";
+import user from "../../imgs/user-plus-alt-1-svgrepo-com.svg";
 
 class LibraryView extends GameView {
   _parentElement = document.querySelector(".library__container");
@@ -20,34 +23,37 @@ class LibraryView extends GameView {
     );
   }
 
-  addHandlerPagination(handler) {
-    this._parentElement.addEventListener(
-      "click",
-      function (e) {
-        const btn = e.target.closest(`.library__btn`);
-        console.log(btn);
-        if (!btn) return;
-        if (btn.classList.contains("library__previous")) this._page--;
-        if (btn.classList.contains("library__next")) this._page++;
-        console.log(this._page);
-        handler(this._page);
-      }.bind(this)
-    );
-  }
-
   _generateMarkup() {
     const markup = this._data
       .map(
         (data) => `
         
         <div class="library__container--inner">
-        <div class="library__container--details">
-          <img class="library__flag" src="${data.image}"/>
-          <div class="library__name">${data.name}</div> 
-          <div class="library__capital">${data.capital}</div> 
-          <div class="library__continent">${data.continent}</div> 
-          <div class="library__population">${data.population}</div> 
-        </div>
+          <div class="library__container--details">
+          
+            <img class="library__flag" src="${data.image}"/>
+            <div class="library__name">${data.name}</div> 
+
+            <div class="library__info">
+
+              <div class="library__capital library__info--details">
+                <img class="library__icons" src="${crown}"/>
+                ${data.capital}
+              </div> 
+
+              <div class="library__continent library__info--details">
+                <img class="library__icons" src="${globe}"/>
+                ${data.continent}
+              </div> 
+
+              <div class="library__population library__info--details">
+                <img class="library__icons" src="${user}"/>
+                ${data.population.toLocaleString("en-US")} 
+              </div>
+
+            </div>
+              
+          </div>
         </div>
 
      `
@@ -55,44 +61,6 @@ class LibraryView extends GameView {
       .join("");
     return markup;
   }
-
-  // _generateMarkup() {
-  //   const curPage = this._data.page;
-  //   const numPages = Math.ceil(
-  //     this._data.countries.length / this._data.resultsPerPage
-  //   );
-  //   // console.log(this._data);
-  //   // console.log(numPages);
-
-  //   // Page 1, and there are other pages
-  //   if (curPage === 1 && numPages > 1) {
-  //     return this._generateMarkupButton(curPage + 1, `next`);
-  //   }
-  //   // Last page
-  //   if (curPage === numPages && numPages > 1) {
-  //     return this._generateMarkupButton(curPage - 1, `prev`);
-  //   }
-  //   // Other page
-  //   if (curPage < numPages) {
-  //     return `
-  //     ${this._generateMarkupButton(curPage - 1, `prev`)}
-  //     ${this._generateMarkupButton(curPage + 1, `next`)}
-  //     `;
-  //   }
-  //   // Page 1, and there are NO other pages
-  //   return ``;
-  // }
-
-  // _generateMarkupButton(page, direction) {
-  //   return `
-  //   <button data-goto="${page}" class="btn--inline pagination__btn--${direction}">
-  //     <svg class="search__icon">
-  //       <use href="${icons}#icon-arrow-left"></use>
-  //     </svg>
-  //     <span>Page ${page}</span>
-  //   </button>
-  //   `;
-  // }
 }
 
 export default new LibraryView();

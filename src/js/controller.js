@@ -66,7 +66,6 @@ const init = function () {
   startView.addHandlerGame(controlReMatch);
   homeView.addHandlerHome(controlHome);
   libraryView.addHandlerLibrary(controlLibrary);
-  libraryView.addHandlerPagination(controlLibrary);
   gameView._highScoreGlobal();
 };
 init();

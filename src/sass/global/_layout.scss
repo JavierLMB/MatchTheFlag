@@ -177,17 +177,10 @@
       align-items: center;
       background: $color-accent-light;
       border-radius: 1rem;
-      min-height: 56rem;
+      min-height: 50rem;
       padding: 4rem;
+      gap: 2rem;
     }
-  }
-
-  &__btn {
-    width: 20rem;
-    text-align: center;
-    color: black;
-    position: absolute;
-    top: -100;
   }
 
   &__flag {
@@ -200,5 +193,21 @@
     font-weight: 400;
     padding: 0.5rem;
     // text-align: center;
+  }
+
+  &__icons {
+    width: 5rem;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    &--details {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
   }
 }
