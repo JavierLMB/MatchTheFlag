@@ -1,5 +1,5 @@
 import { AJAX, getRandomUniqueInt, fullName } from "./helpers.js";
-import { API_URL, MATCHING_LIMITS, RES_PER_PAGE } from "./config.js";
+import { API_URL, MATCHING_LIMITS } from "./config.js";
 
 export const state = {
   countries: [],
@@ -10,6 +10,8 @@ export const state = {
 export const library = {
   countries: [],
 };
+
+console.log(state.countries);
 
 const createLibraryObject = function (arrData) {
   return {

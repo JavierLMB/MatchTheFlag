@@ -21,6 +21,8 @@ const controlGame = async function () {
     nameView.render(model.state.countries);
   } catch (err) {
     console.log(err);
+    model.resetGame();
+    await controlGame();
   }
 };
 
@@ -30,6 +32,7 @@ const controlLibrary = async function (page) {
     libraryView.render(model.library.countries);
   } catch (err) {
     console.log(err);
+    alert(err);
   }
 };
 
