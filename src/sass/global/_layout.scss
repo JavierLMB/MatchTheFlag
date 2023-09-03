@@ -159,6 +159,17 @@
     width: 90vw;
     height: 80vh;
     z-index: 2;
+
+    &--background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: transparent;
+      z-index: 1;
+    }
+
     &--inner {
       display: flex;
       flex-direction: column;
@@ -185,6 +196,13 @@
     }
   }
 
+  &__close {
+    width: 5rem;
+    position: absolute;
+    top: 15;
+    right: 5;
+  }
+
   &__flag {
     max-width: 30rem;
     object-fit: cover;
@@ -194,7 +212,6 @@
     font-size: $font-medium-small;
     font-weight: 400;
     padding: 0.5rem;
-    // text-align: center;
   }
 
   &__icons {
