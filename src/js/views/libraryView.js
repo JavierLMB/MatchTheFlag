@@ -28,7 +28,7 @@ class LibraryView extends GameView {
 
   _generateMarkup() {
     const markup =
-      `<img class="library__close" src="${close}"> ` +
+      ` <img class="library__close" src="${close}"> ` +
       this._data
         .map(
           (data) => `
@@ -68,36 +68,30 @@ class LibraryView extends GameView {
   }
 
   addHandlerCloseKeydown() {
-    document.addEventListener(
+    this._mainContainer.addEventListener(
       "keydown",
       function (e) {
-        console.log("Keydown event:", e.key);
         if (e.key !== "Escape") return;
-
+        if (this._parentElement.classList.contains("hidden")) return;
         this._parentElement.classList.add("hidden");
         this._parentBackground.classList.add("hidden");
+        console.log("Keydown event:", e.key);
       }.bind(this)
     );
   }
-  // addHandlerCloseKeydown(handler) {
-  //   this._parentElement.addEventListener(
-  //     "keydown",
-  //     this._closeLibrary.bind(this, handler)
-  //   );
-  // }
 
-  // _closeLibrary(handler) {
-  //   if (
-  //     (event.type !== "keydown" && event.key !== "Escape") ||
-  //     event.type !== "click"
-  //   )
-  //     return;
-
-  //   this._parentElement.classList.add("hidden");
-  //   this._parentBackground.classList.add("hidden");
-
-  //   handler();
-  // }
+  addHandlerCloseClick() {
+    document.addEventListener(
+      "click",
+      function (e) {
+        const btn = e.target.closest(`.library__close`);
+        if (btn || e.target === this._parentBackground) {
+          this._parentElement.classList.add("hidden");
+          this._parentBackground.classList.add("hidden");
+        }
+      }.bind(this)
+    );
+  }
 }
 
 export default new LibraryView();
