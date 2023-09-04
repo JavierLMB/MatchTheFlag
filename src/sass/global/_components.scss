@@ -153,9 +153,16 @@
 
   &__outcome--container {
     display: flex;
-    margin-top: -15rem;
+    margin-top: -18rem;
     font-size: $font-big;
-    gap: 2rem;
+
+    @media only screen and (max-width: $bp-smaller) {
+      margin-top: -10rem;
+    }
+  }
+
+  &__win {
+    padding-bottom: 3rem;
   }
 
   &__highscore {

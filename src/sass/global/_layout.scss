@@ -204,10 +204,13 @@
   }
 
   &__close {
-    position: absolute;
+    position: sticky;
+    background: $color-accent-dark;
+    border: 2px solid $color-accent-light;
     width: 5rem;
     top: 15;
-    right: 5;
+    left: 80%;
+    transform: translate(50%);
   }
 
   &__flag {
