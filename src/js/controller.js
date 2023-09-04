@@ -72,5 +72,6 @@ const init = function () {
   homeView.addHandlerHome(controlHome);
   libraryView.addHandlerLibrary(controlLibrary);
   gameView._highScoreGlobal();
+  homeView.colordash();
 };
 init();

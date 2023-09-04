@@ -26,6 +26,21 @@ class homeView extends GameView {
     this._clear();
     this._parentStart.insertAdjacentHTML("afterbegin", markup);
   }
+
+  colordash() {
+    let title = document.querySelector(".container__main--title");
+    title.innerHTML = title.innerText
+      .split("")
+      .map(
+        (letters, i) =>
+          `<span class="container__main--title--effect" style="transition-delay:${
+            i * 10
+          }ms; filter:hue-rotate(${i * 40}deg")>
+           ${letters}
+          </span>`
+      )
+      .join(" ");
+  }
 }
 
 export default new homeView();

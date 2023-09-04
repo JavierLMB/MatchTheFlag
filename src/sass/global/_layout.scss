@@ -27,6 +27,12 @@
     font-size: $font-medium;
     text-align: center;
     padding-bottom: $spacing-xl-preferred;
+    -webkit-text-stroke: 1px black;
+    &:hover span {
+      color: #0f0;
+      text-shadow: 0 0 0px #0f0, 0 0 0px #0f0, 0 0 0px #0f0;
+      // text-shadow: 0 0 5px #0f0, 0 0 15px #0f0, 0 0 30px #0f0;
+    }
   }
 }
 
