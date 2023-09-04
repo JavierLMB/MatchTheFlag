@@ -26,12 +26,15 @@ class LibraryView extends GameView {
     );
   }
 
+  renderClose() {
+    const markup = ` <img class="library__close" src="${close}"> `;
+    this._parentBackground.insertAdjacentHTML("afterbegin", markup);
+  }
+
   _generateMarkup() {
-    const markup =
-      ` <img class="library__close" src="${close}"> ` +
-      this._data
-        .map(
-          (data) => `
+    const markup = this._data
+      .map(
+        (data) => `
         
         <div class="library__container--inner">
           <div class="library__container--details">
@@ -62,8 +65,8 @@ class LibraryView extends GameView {
         </div>
 
      `
-        )
-        .join("");
+      )
+      .join("");
     return markup;
   }
 

@@ -167,6 +167,11 @@
     height: 80vh;
     z-index: 2;
 
+    @media only screen and (max-width: $bp-small) {
+      width: 95vw;
+      height: 95vh;
+    }
+
     &--background {
       position: absolute;
       top: 0;
@@ -203,14 +208,18 @@
     }
   }
 
+  &--background {
+    position: relative;
+  }
+
   &__close {
-    position: sticky;
+    position: absolute;
     background: $color-accent-dark;
     border: 2px solid $color-accent-light;
     width: 5rem;
-    top: 15;
-    left: 80%;
-    transform: translate(50%);
+    top: 25;
+    right: 25;
+    z-index: 99;
   }
 
   &__flag {

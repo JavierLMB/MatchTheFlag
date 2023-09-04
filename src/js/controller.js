@@ -30,6 +30,7 @@ const controlLibrary = async function (page) {
   try {
     await model.loadLibraryData();
     libraryView.render(model.library.countries);
+    libraryView.renderClose();
     libraryView.addHandlerCloseKeydown();
     libraryView.addHandlerCloseClick();
   } catch (err) {
