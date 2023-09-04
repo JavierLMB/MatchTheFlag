@@ -166,6 +166,8 @@
     width: 90vw;
     height: 80vh;
     z-index: 2;
+    border-left: 2px solid $color-primary;
+    border-right: 2px solid $color-primary;
 
     @media only screen and (max-width: $bp-small) {
       width: 95vw;
@@ -200,7 +202,8 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      background: $color-accent-light;
+      background: $color-accent-light--solid;
+      border: 2px solid $color-primary;
       border-radius: 1rem;
       min-height: 50rem;
       padding: 4rem;
@@ -214,8 +217,8 @@
 
   &__close {
     position: absolute;
-    background: $color-accent-dark;
-    border: 2px solid $color-accent-light;
+    background: $color-accent-dark--solid;
+    border: 2px solid $color-accent-light--solid;
     width: 5rem;
     top: 25;
     right: 25;
