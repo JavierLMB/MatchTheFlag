@@ -19,6 +19,7 @@ const controlGame = async function () {
     await model.loadCountryData();
     flagView.render(model.state.countries);
     nameView.render(model.state.countries);
+    homeView.colordash();
   } catch (err) {
     console.log(err);
     model.resetGame();
