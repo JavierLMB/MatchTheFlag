@@ -35,7 +35,7 @@ class homeView extends GameView {
         (letters, i) =>
           `<span class="container__main--title--effect" style="transition-delay:${
             i * 10
-          }ms; filter:hue-rotate(${i * 40}deg")>
+          }ms;")>
            ${letters}
           </span>`
       )
