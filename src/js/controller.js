@@ -49,7 +49,7 @@ const controlMatch = function (countryName, score) {
   gameView._generateMore(score, controlGame, model.resetGame);
   lifeView._lifeCounter(score);
   scoreView.renderScore(score);
-  counterView._winCounter(score);
+  counterView.winCounter(score);
 };
 
 const controlReMatch = function () {

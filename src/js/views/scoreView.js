@@ -45,28 +45,27 @@ class ScoreView extends GameView {
   }
 
   _setRenderTitle(score) {
-    const title = document.querySelector(".container__main--title");
-    if (score.finalWins <= 3) title.textContent = "Better luck next time!";
-    if (score.finalWins > 3 && score.win <= 5)
-      title.textContent = "Doing great!";
-    if (score.finalWins > 5 && score.win <= 8) title.textContent = "Good job!";
-    if (score.finalWins > 8 && score.win <= 10)
-      title.textContent = "Great job!";
-    if (score.finalWins > 10 && score.win <= 12)
-      title.textContent = "Awesome job!";
-    if (score.finalWins > 12 && score.win <= 15)
-      title.textContent = "Excellent job!";
-    if (score.finalWins > 15 && score.win <= 17)
-      title.textContent = "Fantastic job!";
-    if (score.finalWins > 17 && score.win <= 20)
-      title.textContent = "Impressive!";
-    if (score.finalWins > 20 && score.win <= 25)
-      title.textContent = "Unbelievable!";
-    if (score.finalWins > 25 && score.win <= 30)
-      title.textContent = "Incredible!";
+    const titleMap = [
+      { maxWins: 3, title: "Better luck next time!" },
+      { maxWins: 5, title: "Doing great!" },
+      { maxWins: 8, title: "Good job!" },
+      { maxWins: 10, title: "Great job!" },
+      { maxWins: 12, title: "Awesome job!" },
+      { maxWins: 15, title: "Excellent job!" },
+      { maxWins: 17, title: "Fantastic job!" },
+      { maxWins: 20, title: "Impressive!" },
+      { maxWins: 25, title: "Unbelievable!" },
+      { maxWins: 30, title: "Incredible!" },
+    ];
+
+    for (const { maxWins, title } of titleMap) {
+      if (score.finalWins <= maxWins) {
+        const titleElement = document.querySelector(".container__main--title");
+        titleElement.textContent = title;
+        break;
+      }
+    }
   }
 }
 
 export default new ScoreView();
-// title.textContent =
-//   score.win < 5 ? "Better luck next time!" : "Awesome job!";

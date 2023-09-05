@@ -4,7 +4,7 @@ import gameView, { GameView } from "./gameView.js";
 class CounterView extends GameView {
   _parentElement = document.querySelector(".counter__count");
 
-  _winCounter(score) {
+  winCounter(score) {
     // console.log(score.finalWin, this._finalWin);
     if (+this._parentElement.innerText === score.finalWins) return;
 
