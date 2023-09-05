@@ -11,7 +11,7 @@ class homeView extends GameView {
 
 
       <div class="start__container">
-        <img class="world-map" src="${worldSvg}" alt="world map">
+        <img class="world-globe" src="${worldSvg}" alt="world map">
         <button class="start__button btn-front">Start</button>
         <button class="start__library btn-front">Library</button>
       </div>
