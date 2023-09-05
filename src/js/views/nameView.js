@@ -9,17 +9,19 @@ class NameView extends GameView {
 
   _generateMarkup() {
     this._namePositionShuffle(this._data);
-    const markup =
-      `<div class="name__container--inner">` +
-      this._data
-        .map(
-          (data) => `<div class="name__country--container">
-        <div class="name__country" data-country="${data.name}">${data.name}</div> 
-        </div>
+    const markup = `
+      <div class="name__container--inner">
+        ${this._data
+          .map(
+            (data) => `
+          <div class="name__country--container">
+            <div class="name__country" data-country="${data.name}">${data.name}</div>
+          </div>
         `
-        )
-        .join("") +
-      `</div>`;
+          )
+          .join("")}
+      </div>
+    `;
     return markup;
   }
 
