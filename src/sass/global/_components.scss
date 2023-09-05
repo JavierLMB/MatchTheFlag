@@ -159,6 +159,10 @@
     @media only screen and (max-width: $bp-smaller) {
       margin-top: -10rem;
     }
+
+    @media only screen and (max-width: $bp-largest) and (max-height: $bp-small) {
+      margin-top: -10rem;
+    }
   }
 
   &__win {
