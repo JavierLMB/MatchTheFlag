@@ -1,5 +1,3 @@
-import { mark } from "regenerator-runtime";
-import View from "./View.js";
 import { GameView } from "./gameView.js";
 
 class NameView extends GameView {

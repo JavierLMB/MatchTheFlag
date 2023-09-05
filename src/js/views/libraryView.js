@@ -1,5 +1,4 @@
-import View from "./View.js";
-import gameView, { GameView } from "./gameView.js";
+import { GameView } from "./gameView.js";
 import crown from "../../imgs/crown-svgrepo-com.svg";
 import globe from "../../imgs/globe-svgrepo-com.svg";
 import user from "../../imgs/user-plus-alt-1-svgrepo-com.svg";

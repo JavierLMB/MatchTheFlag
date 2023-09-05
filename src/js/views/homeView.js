@@ -1,5 +1,4 @@
-import View from "./View.js";
-import gameView, { GameView } from "./gameView.js";
+import { GameView } from "./gameView.js";
 import worldSvg from "../../imgs/globe-2-svgrepo-com.svg";
 
 class homeView extends GameView {

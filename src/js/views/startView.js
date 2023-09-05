@@ -1,5 +1,4 @@
-import View from "./View.js";
-import gameView, { GameView } from "./gameView.js";
+import { GameView } from "./gameView.js";
 
 class StartView extends GameView {
   _parentElement = document.querySelector(".start__container");

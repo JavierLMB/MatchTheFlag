@@ -1,4 +1,3 @@
-import View from "./View.js";
 import { GameView } from "./gameView.js";
 
 class LifeView extends GameView {
