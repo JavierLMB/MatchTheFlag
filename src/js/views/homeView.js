@@ -6,20 +6,6 @@ class homeView extends GameView {
   _parentStart = document.querySelector(".start__container");
   _target = ".score__home";
 
-  _generateMarkup() {
-    const markup = `
-
-
-      <div class="start__container">
-        <img class="world-globe" src="${worldSvg}" alt="world map">
-        <button class="start__button btn-front">Start</button>
-        <button class="start__library btn-front">Library</button>
-      </div>
-
-     `;
-    return markup;
-  }
-
   renderHome() {
     const markup = this._generateMarkup();
     this.clear();
@@ -40,6 +26,20 @@ class homeView extends GameView {
           </span>`
       )
       .join(" ");
+  }
+
+  _generateMarkup() {
+    const markup = `
+
+
+      <div class="start__container">
+        <img class="world-globe" src="${worldSvg}" alt="world map">
+        <button class="start__button btn-front">Start</button>
+        <button class="start__library btn-front">Library</button>
+      </div>
+
+     `;
+    return markup;
   }
 }
 

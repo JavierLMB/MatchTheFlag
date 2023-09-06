@@ -36,6 +36,50 @@ export class GameView extends View {
     );
   }
 
+  highScoreGlobal() {
+    let highScore = localStorage.getItem("highScore");
+    return highScore;
+  }
+
+  addHandlerHome(handler) {
+    this._parentElement.addEventListener(
+      "click",
+      function (e) {
+        const click = e.target.closest(this._target);
+        if (!click) return;
+        this._scoreViewReset();
+        handler();
+      }.bind(this)
+    );
+  }
+
+  addHandlerGame(handler) {
+    this._parentElement.addEventListener(
+      "click",
+      function (e) {
+        const click = e.target.closest(this._target);
+        if (!click) return;
+        this._mainViewReset();
+        handler();
+      }.bind(this)
+    );
+  }
+
+  matchCondition(state) {
+    this._clearMatchArray(state);
+    this._winCondition(state);
+    this._lossCondition(state);
+    this._scoreTrack(state);
+  }
+
+  generateMore(score, handler, resetGame) {
+    if (score.win % 4 !== 0 || score.win === 0) return;
+    console.log(score, "SCOREEEEE");
+    this._clearFlagName();
+    resetGame();
+    handler();
+  }
+
   _lossLimit() {
     if (this._score.loss >= 3) {
       this._score.loss = 0;
@@ -64,23 +108,6 @@ export class GameView extends View {
     console.log(highScore, "game");
   }
 
-  highScoreGlobal() {
-    let highScore = localStorage.getItem("highScore");
-    return highScore;
-  }
-
-  addHandlerHome(handler) {
-    this._parentElement.addEventListener(
-      "click",
-      function (e) {
-        const click = e.target.closest(this._target);
-        if (!click) return;
-        this._scoreViewReset();
-        handler();
-      }.bind(this)
-    );
-  }
-
   _scoreViewReset() {
     const title = document.querySelector(".container__main--title");
     title.textContent = "Match The Flags To Their Country Names";
@@ -88,18 +115,6 @@ export class GameView extends View {
     hearts.forEach((heart) => heart.classList.add("losser__effect--heart"));
     const heartsContainer = document.querySelector(".heart__container");
     heartsContainer.classList.add("hidden");
-  }
-
-  addHandlerGame(handler) {
-    this._parentElement.addEventListener(
-      "click",
-      function (e) {
-        const click = e.target.closest(this._target);
-        if (!click) return;
-        this._mainViewReset();
-        handler();
-      }.bind(this)
-    );
   }
 
   _mainViewReset() {
@@ -125,13 +140,6 @@ export class GameView extends View {
     if (!activeElement) click.classList.toggle("select--active");
     if (activeElement) click.classList.remove("select--active");
     return activeElementCountry;
-  }
-
-  matchCondition(state) {
-    this._clearMatchArray(state);
-    this._winCondition(state);
-    this._lossCondition(state);
-    this._scoreTrack(state);
   }
 
   _lossCondition(state) {
@@ -188,14 +196,6 @@ export class GameView extends View {
   _scoreTrack(state) {
     state.score.win = this._score.win;
     state.score.loss = this._score.loss;
-  }
-
-  generateMore(score, handler, resetGame) {
-    if (score.win % 4 !== 0 || score.win === 0) return;
-    console.log(score, "SCOREEEEE");
-    this._clearFlagName();
-    resetGame();
-    handler();
   }
 
   _clearFlagName() {

@@ -4,34 +4,6 @@ class ScoreView extends GameView {
   _parentElement = document.querySelector(".score__container");
   _target = ".score__try-again";
 
-  _generateMarkup() {
-    const markup = `
-
-        <div class="score__container--result">
-          
-
-          <div class="score__outcome--container">
-            <div class="score__win">${this._data.finalWins}</div>
-          </div>
-          <div class="score__highscore">Current highscore! ${this._data.highScore}</div>
-        </div>
-
-        
-
-        <div class="score__container--button">
-          <button class="score__button score__home">Home</button>
-          <button class="score__button score__try-again">Try Again</button>
-        </div>
-
-     `;
-    return markup;
-  }
-
-  _clearCounter() {
-    const counterParent = document.querySelector(".counter__count");
-    counterParent.classList.add("hidden");
-  }
-
   renderScore(score) {
     if (score.loss !== 3) return;
 
@@ -64,6 +36,34 @@ class ScoreView extends GameView {
         break;
       }
     }
+  }
+
+  _generateMarkup() {
+    const markup = `
+
+        <div class="score__container--result">
+          
+
+          <div class="score__outcome--container">
+            <div class="score__win">${this._data.finalWins}</div>
+          </div>
+          <div class="score__highscore">Current highscore! ${this._data.highScore}</div>
+        </div>
+
+        
+
+        <div class="score__container--button">
+          <button class="score__button score__home">Home</button>
+          <button class="score__button score__try-again">Try Again</button>
+        </div>
+
+     `;
+    return markup;
+  }
+
+  _clearCounter() {
+    const counterParent = document.querySelector(".counter__count");
+    counterParent.classList.add("hidden");
   }
 }
 

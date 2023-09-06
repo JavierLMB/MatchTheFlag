@@ -30,6 +30,32 @@ class LibraryView extends GameView {
     this._parentBackground.insertAdjacentHTML("afterbegin", markup);
   }
 
+  addHandlerCloseKeydown() {
+    this._mainContainer.addEventListener(
+      "keydown",
+      function (e) {
+        if (e.key !== "Escape") return;
+        if (this._parentElement.classList.contains("hidden")) return;
+        this._parentElement.classList.add("hidden");
+        this._parentBackground.classList.add("hidden");
+        console.log("Keydown event:", e.key);
+      }.bind(this)
+    );
+  }
+
+  addHandlerCloseClick() {
+    document.addEventListener(
+      "click",
+      function (e) {
+        const btn = e.target.closest(`.library__close`);
+        if (btn || e.target === this._parentBackground) {
+          this._parentElement.classList.add("hidden");
+          this._parentBackground.classList.add("hidden");
+        }
+      }.bind(this)
+    );
+  }
+
   _generateMarkup() {
     const markup = this._data
       .map(
@@ -67,32 +93,6 @@ class LibraryView extends GameView {
       )
       .join("");
     return markup;
-  }
-
-  addHandlerCloseKeydown() {
-    this._mainContainer.addEventListener(
-      "keydown",
-      function (e) {
-        if (e.key !== "Escape") return;
-        if (this._parentElement.classList.contains("hidden")) return;
-        this._parentElement.classList.add("hidden");
-        this._parentBackground.classList.add("hidden");
-        console.log("Keydown event:", e.key);
-      }.bind(this)
-    );
-  }
-
-  addHandlerCloseClick() {
-    document.addEventListener(
-      "click",
-      function (e) {
-        const btn = e.target.closest(`.library__close`);
-        if (btn || e.target === this._parentBackground) {
-          this._parentElement.classList.add("hidden");
-          this._parentBackground.classList.add("hidden");
-        }
-      }.bind(this)
-    );
   }
 }
 
