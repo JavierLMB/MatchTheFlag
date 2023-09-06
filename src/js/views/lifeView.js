@@ -3,7 +3,7 @@ import { GameView } from "./gameView.js";
 class LifeView extends GameView {
   _parentElement = document.querySelector(".heart__container");
 
-  _lifeCounter(score) {
+  lifeCounter(score) {
     if (score.loss === 0) return;
     if (score.loss > 3) return;
     console.log(score.loss);

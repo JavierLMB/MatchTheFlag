@@ -22,7 +22,7 @@ class homeView extends GameView {
 
   renderHome() {
     const markup = this._generateMarkup();
-    this._clear();
+    this.clear();
     this._parentStart.insertAdjacentHTML("afterbegin", markup);
     this.colordash();
   }

@@ -46,22 +46,22 @@ const controlMatch = function (countryName, score) {
   nameView.matchCondition(model.state);
   console.log(model.state.matching);
   console.log(score, "😘");
-  gameView._generateMore(score, controlGame, model.resetGame);
-  lifeView._lifeCounter(score);
+  gameView.generateMore(score, controlGame, model.resetGame);
+  lifeView.lifeCounter(score);
   scoreView.renderScore(score);
   counterView.winCounter(score);
 };
 
 const controlReMatch = function () {
   model.resetGame();
-  scoreView._clear();
-  startView._clear();
+  scoreView.clear();
+  startView.clear();
   controlGame();
 };
 
 const controlHome = function () {
   model.resetGame();
-  scoreView._clear();
+  scoreView.clear();
   homeView.renderHome();
 };
 
@@ -73,7 +73,7 @@ const init = function () {
   startView.addHandlerGame(controlReMatch);
   homeView.addHandlerHome(controlHome);
   libraryView.addHandlerLibrary(controlLibrary);
-  gameView._highScoreGlobal();
+  gameView.highScoreGlobal();
   homeView.colordash();
 };
 init();
