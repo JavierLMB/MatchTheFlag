@@ -28,10 +28,10 @@ Library: Explore the "Library" section to view information about countries, incl
 
 ## **Technologies Used**
 
-*HTML
-*JavaScript
-*SCSS (Sass)
-*Parcel (JavaScript bundler)
+- HTML
+- JavaScript
+- SCSS (Sass)
+- Parcel (JavaScript bundler)
 
 ## **Data Source**
 
@@ -46,13 +46,13 @@ The game retrieves country information from an API to display flags, country nam
 
 ## **Author**
 
-*Javier C
-*GitHub: https://github.com/JavierLMB
+- Javier C
+  - GitHub: [https://github.com/JavierLMB](https://github.com/JavierLMB)
 
 ## **License**
 
 This project is licensed under the MIT License.
-See https://opensource.org/license/mit/file for details.
+See [MIT License](https://opensource.org/licenses/mit-license.php) for details.
 
 ## **Acknowledgments**
 
