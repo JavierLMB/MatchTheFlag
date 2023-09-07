@@ -13,7 +13,7 @@ class NameView extends GameView {
           .map(
             (data) => `
           <div class="name__country--container">
-            <div class="name__country" data-country="${data.name}">${data.name}</div>
+            <div class="name__country" data-country="${data.name}" alt="Name of a country">${data.name}</div>
           </div>
         `
           )

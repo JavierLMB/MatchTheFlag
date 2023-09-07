@@ -70,17 +70,17 @@ class LibraryView extends GameView {
             <div class="library__info">
 
               <div class="library__capital library__info--details">
-                <img class="library__icons" src="${crown}"/>
+                <img class="library__icons" src="${crown}" alt="Image of a crown representing the capital of a country"/>
                 ${data.capital}
               </div> 
 
               <div class="library__continent library__info--details">
-                <img class="library__icons" src="${globe}"/>
+                <img class="library__icons" src="${globe}" alt="Image of a globe representing the continent of a country"/>
                 ${data.continent}
               </div> 
 
               <div class="library__population library__info--details">
-                <img class="library__icons" src="${user}"/>
+                <img class="library__icons" src="${user}" alt="Image of a person representing the population of a country"/>
                 ${data.population.toLocaleString("en-US")} 
               </div>
 
