@@ -1,6 +1,6 @@
 # MatchTheFlag
 
-live link - https://matchtheflagjc.netlify.app/
+Live link - https://matchtheflagjc.netlify.app/
 
 ## **Match the Flag Game**
 
@@ -28,10 +28,10 @@ Library: Explore the "Library" section to view information about countries, incl
 
 ## **Technologies Used**
 
-HTML
-JavaScript
-SCSS (Sass)
-Parcel (JavaScript bundler)
+*HTML
+*JavaScript
+*SCSS (Sass)
+*Parcel (JavaScript bundler)
 
 ## **Data Source**
 
@@ -46,8 +46,8 @@ The game retrieves country information from an API to display flags, country nam
 
 ## **Author**
 
-Javier C
-GitHub: https://github.com/JavierLMB
+*Javier C
+*GitHub: https://github.com/JavierLMB
 
 ## **License**
 
