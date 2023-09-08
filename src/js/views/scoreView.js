@@ -27,6 +27,10 @@ class ScoreView extends GameView {
       { maxWins: 20, title: "Impressive!" },
       { maxWins: 25, title: "Unbelievable!" },
       { maxWins: 30, title: "Incredible!" },
+      { maxWins: 35, title: "Magnificent!" },
+      { maxWins: 40, title: "Remarkable!" },
+      { maxWins: 45, title: "Exceptional!" },
+      { maxWins: 50, title: "Supreme!" },
     ];
 
     for (const { maxWins, title } of titleMap) {
