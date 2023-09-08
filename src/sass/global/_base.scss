@@ -33,25 +33,14 @@ $spacing-3xl-min: 1rem;
 $spacing-3xl-preferred: clamp(6.75rem, calc(6.6rem + 0.75vw), 7.5rem);
 $spacing-3xl-max: 2.5rem;
 
-$spacing-xl-min: 0.75rem;
 $spacing-xl-preferred: clamp(3.38rem, calc(3.3rem + 0.38vw), 3.75rem);
-$spacing-xl-max: 1.5rem;
 
-$spacing-lg-min: 0.5rem;
 $spacing-lg-preferred: clamp(2.25rem, calc(2.2rem + 0.25vw), 2.5rem);
-$spacing-lg-max: 1rem;
 
-$spacing-md-min: 0.25rem;
 $spacing-md-preferred: clamp(1.69rem, calc(1.65rem + 0.19vw), 1.88rem);
-$spacing-md-max: 0.75rem;
 
-$spacing-sm-min: 0.15rem;
 $spacing-sm-preferred: clamp(1.13rem, calc(1.1rem + 0.13vw), 1.25rem);
 $spacing-sm-max: 0.5rem;
-
-$spacing-xs-min: 0.1rem;
-$spacing-xs-preferred: clamp(0.88rem, calc(0.86rem + 0.06vw), 0.94rem);
-$spacing-xs-max: 0.25rem;
 
 ////// RESPONSIVE BREAKPOINTS
 $bp-largest: 111em; // 1776px
