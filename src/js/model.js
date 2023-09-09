@@ -26,7 +26,7 @@ const createLibraryObject = function (arrData) {
   return {
     name: arrData.name.common,
     image: arrData.flags.svg,
-    capital: arrData.capital,
+    capital: arrData.capital || arrData.name.common,
     continent: arrData.continents,
     population: arrData.population,
   };
