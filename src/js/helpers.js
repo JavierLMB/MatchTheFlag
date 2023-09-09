@@ -1,4 +1,4 @@
-import { API_URL, TIMEOUT_SEC, NUMBER_OF_RANDOM_NUMBERS } from "./config.js";
+import { TIMEOUT_SEC, NUMBER_OF_RANDOM_NUMBERS } from "./config.js";
 
 const timeout = function (s) {
   return new Promise(function (_, reject) {

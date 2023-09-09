@@ -11,6 +11,15 @@ export const library = {
   countries: [],
 };
 
+const contriesToRemove = [
+  "Heard Island and McDonald Islands",
+  "Saint Martin",
+  "Svalbard and Jan Mayen",
+  "United States Minor Outlying Islands",
+  "Antarctica",
+  "Bouvet Island",
+];
+
 console.log(state.countries);
 
 const createLibraryObject = function (arrData) {
@@ -26,8 +35,11 @@ const createLibraryObject = function (arrData) {
 export const loadLibraryData = async function () {
   try {
     const data = await AJAX(`${API_URL}`);
+    const selectedData = data.filter(
+      (country) => !contriesToRemove.includes(country.name.common)
+    );
 
-    data.forEach((country) => {
+    selectedData.forEach((country) => {
       const LibraryObject = createLibraryObject(country);
       library.countries.push(LibraryObject);
     });
@@ -47,10 +59,14 @@ const createCountryObject = function (arrData) {
 export const loadCountryData = async function () {
   try {
     const data = await AJAX(`${API_URL}`);
-    const uniqueIndices = getRandomUniqueInt(data.length);
+    const selectedData = data.filter(
+      (country) => !contriesToRemove.includes(country.name.common)
+    );
+    console.log(selectedData);
+    const uniqueIndices = getRandomUniqueInt(selectedData.length);
 
     uniqueIndices.forEach((index) => {
-      const countryData = data[index];
+      const countryData = selectedData[index];
       const countryObject = createCountryObject(countryData);
       state.countries.push(countryObject);
     });
