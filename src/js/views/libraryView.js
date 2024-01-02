@@ -38,7 +38,6 @@ class LibraryView extends GameView {
         if (this._parentElement.classList.contains("hidden")) return;
         this._parentElement.classList.add("hidden");
         this._parentBackground.classList.add("hidden");
-        console.log("Keydown event:", e.key);
       }.bind(this)
     );
   }

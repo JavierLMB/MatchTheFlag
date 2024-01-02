@@ -6,7 +6,6 @@ class LifeView extends GameView {
   lifeCounter(score) {
     if (score.loss === 0) return;
     if (score.loss > 3) return;
-    console.log(score.loss);
     const fullHealth = this._parentElement.querySelector(
       `[data-heart="${score.loss}"]`
     );

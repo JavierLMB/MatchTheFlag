@@ -74,7 +74,6 @@ export class GameView extends View {
 
   generateMore(score, handler, resetGame) {
     if (score.win % 4 !== 0 || score.win === 0) return;
-    console.log(score, "SCOREEEEE");
     this._clearFlagName();
     resetGame();
     handler();
@@ -105,7 +104,6 @@ export class GameView extends View {
     let highScore = localStorage.getItem("highScore");
 
     this._score.highScore = highScore;
-    console.log(highScore, "game");
   }
 
   _scoreViewReset() {
@@ -159,8 +157,6 @@ export class GameView extends View {
     const matchedCountry = this._findHTMLCountry(state);
     matchedCountry.classList.remove("select--active");
     matchedCountry.classList.add("winner__effect");
-
-    console.log(matchedCountry);
 
     this._score.finalWins++;
     this._score.win++;

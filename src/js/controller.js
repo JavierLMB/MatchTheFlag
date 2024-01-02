@@ -44,8 +44,6 @@ const controlMatch = function (countryName, score) {
   model.matchGame(countryName);
   flagView.matchCondition(model.state);
   nameView.matchCondition(model.state);
-  console.log(model.state.matching);
-  console.log(score, "😘");
   gameView.generateMore(score, controlGame, model.resetGame);
   lifeView.lifeCounter(score);
   scoreView.renderScore(score);

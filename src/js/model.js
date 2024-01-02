@@ -20,8 +20,6 @@ const contriesToRemove = [
   "Bouvet Island",
 ];
 
-console.log(state.countries);
-
 const createLibraryObject = function (arrData) {
   return {
     name: arrData.name.common,
@@ -62,7 +60,6 @@ export const loadCountryData = async function () {
     const selectedData = data.filter(
       (country) => !contriesToRemove.includes(country.name.common)
     );
-    console.log(selectedData);
     const uniqueIndices = getRandomUniqueInt(selectedData.length);
 
     uniqueIndices.forEach((index) => {
@@ -120,5 +117,3 @@ export const resetGame = function () {
   state.matching = [];
   state.score = [];
 };
-
-console.log(state);
