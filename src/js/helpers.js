@@ -25,6 +25,7 @@ export const AJAX = async function (url) {
     const fetchPro = fetch(url);
     const res = await Promise.race([fetchPro, timeout(TIMEOUT_SEC)]);
     const data = await res.json();
+    if (!res.ok) throw new Error(data.message || `Request failed with status ${res.status}`);
     return data;
   } catch (err) {
     console.log(err);

@@ -1,8 +1,8 @@
 import { GameView } from "./gameView.js";
-import crown from "../../imgs/crown-svgrepo-com.svg";
-import globe from "../../imgs/globe-svgrepo-com.svg";
-import user from "../../imgs/user-plus-alt-1-svgrepo-com.svg";
-import close from "../../imgs/xmark-svgrepo-com.svg";
+const crownSrc = new URL("../../imgs/crown-svgrepo-com.svg", import.meta.url).href;
+const globeSrc = new URL("../../imgs/globe-svgrepo-com.svg", import.meta.url).href;
+const userSrc = new URL("../../imgs/user-plus-alt-1-svgrepo-com.svg", import.meta.url).href;
+const closeSrc = new URL("../../imgs/xmark-svgrepo-com.svg", import.meta.url).href;
 
 class LibraryView extends GameView {
   _parentElement = document.querySelector(".library__container");
@@ -21,12 +21,12 @@ class LibraryView extends GameView {
         this._parentBackground.classList.remove("hidden");
 
         handler();
-      }.bind(this)
+      }.bind(this),
     );
   }
 
   renderClose() {
-    const markup = ` <img class="library__close" src="${close}"> `;
+    const markup = ` <img class="library__close" src="${closeSrc}"> `;
     this._parentBackground.insertAdjacentHTML("afterbegin", markup);
   }
 
@@ -38,7 +38,7 @@ class LibraryView extends GameView {
         if (this._parentElement.classList.contains("hidden")) return;
         this._parentElement.classList.add("hidden");
         this._parentBackground.classList.add("hidden");
-      }.bind(this)
+      }.bind(this),
     );
   }
 
@@ -51,7 +51,7 @@ class LibraryView extends GameView {
           this._parentElement.classList.add("hidden");
           this._parentBackground.classList.add("hidden");
         }
-      }.bind(this)
+      }.bind(this),
     );
   }
 
@@ -69,17 +69,17 @@ class LibraryView extends GameView {
             <div class="library__info">
 
               <div class="library__capital library__info--details">
-                <img class="library__icons" src="${crown}" alt="Image of a crown representing the capital of a country"/>
+                <img class="library__icons" src="${crownSrc}" alt="Image of a crown representing the capital of a country"/>
                 ${data.capital}
               </div> 
 
               <div class="library__continent library__info--details">
-                <img class="library__icons" src="${globe}" alt="Image of a globe representing the continent of a country"/>
+                <img class="library__icons" src="${globeSrc}" alt="Image of a globe representing the continent of a country"/>
                 ${data.continent}
               </div> 
 
               <div class="library__population library__info--details">
-                <img class="library__icons" src="${user}" alt="Image of a person representing the population of a country"/>
+                <img class="library__icons" src="${userSrc}" alt="Image of a person representing the population of a country"/>
                 ${data.population.toLocaleString("en-US")} 
               </div>
 
@@ -88,7 +88,7 @@ class LibraryView extends GameView {
           </div>
         </div>
 
-     `
+     `,
       )
       .join("");
     return markup;
